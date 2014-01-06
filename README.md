@@ -5,7 +5,7 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
 
 
 ##**Features:**
-* Security based on **4096-bit RSA** key-pair
+* Security based on **4096-bit RSA** key-pairs
 * **C**ryptographically **G**enerated **E**ndpoint **I**dentifiers **(CGEIDs)**
  * 32-bit IANA prefix
  * 96-bit SHA-2 HASH of RSA public key
@@ -38,7 +38,6 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
 * **No support** for *Global No Such Agency Backup Service* **;-)** 
 * Hardware/OS-independent
 * ***GPLv2 license*** (Flattr button/Bitcoin address must not be manipulated)
-* Programming language: C99
 * Coding conventions: https://github.com/renne/ipv6mesh/wiki/Coding-conventions
 * Feature requests and bugs: https://github.com/renne/ipv6mesh/issues
 * Wiki: https://github.com/renne/ipv6mesh/wiki
