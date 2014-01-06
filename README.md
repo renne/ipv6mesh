@@ -19,10 +19,10 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
   * AES-256 stream-cipher
 * D1HT routing table
   * UDP protocol
-  * CGEID-based index
+  * CGEID-based index (prevents Sybil attacks)
   * Record type for CGEID/RSA public key tupel
   * Record type for CGEIDs of point-2-point mesh neighbours and IPv4/IPv6 adresses of routers
-  * RSA-signed records
+  * RSA-signed records (prevents Spartacus attacks)
   * BGP replacement
   * Survives (global) BGP-blackout
   * Survives (global) DNS-blackout
