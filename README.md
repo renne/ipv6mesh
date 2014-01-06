@@ -35,6 +35,8 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
     * NAT Traversal
     * TURN replacement
     * Nodes without mesh connectivity/mesh border nodes can tunnel the encrypted payload to each other
+ * Implemetation of Onion routing depends on performance
+ * Filing IETF Internet Draft planned when IPv6MESH scales well
 * **No support** for *Global No Such Agency Backup Service* **;-)** 
 * Hardware/OS-independent
 * ***GPLv2 license*** (Flattr button/Bitcoin address must not be manipulated)
