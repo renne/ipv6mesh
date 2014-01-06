@@ -40,9 +40,97 @@
       </nav>
       <section>
         <h1>
-<a name="ipv6mesh" class="anchor" href="#ipv6mesh"><span class="octicon octicon-link"></span></a>IPv6MESH</h1>
+<a name="ipv6mesh-" class="anchor" href="#ipv6mesh-"><span class="octicon octicon-link"></span></a>IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&amp;url=http://ipv6mesh.eu&amp;title=IPv6MESH&amp;language=C99&amp;tags=github&amp;category=software"><img src="http://api.flattr.com/button/flattr-badge-large.png" height="24em" width="16%"></a>
+</h1>
 
-<p>Ad-Hoc MESH support for IPv6</p>
+<p><strong>IPv6MESH</strong> is a mesh network extension for the Internet Protocol 6.</p>
+
+<h2>
+<a name="features" class="anchor" href="#features"><span class="octicon octicon-link"></span></a><strong>Features:</strong>
+</h2>
+
+<ul>
+<li>Security based on <strong>4096-bit RSA</strong> key-pair</li>
+<li>
+<strong>C</strong>ryptographically <strong>G</strong>enerated <strong>E</strong>ndpoint <strong>I</strong>dentifiers <strong>(CGEIDs)</strong>
+
+<ul>
+<li>32-bit IANA prefix</li>
+<li>96-bit SHA-2 HASH of RSA public key</li>
+<li>Compatibel with IPv6-addresses</li>
+<li>RSA-based authentication</li>
+<li><strong>Decentralized ad-hoc generation</strong></li>
+<li>Can be exchanged between users via QR-code, NFC, VCards, etc.</li>
+</ul>
+</li>
+<li>End-2-End payload encryption
+
+<ul>
+<li>RSA exchange of random stream-cipher key</li>
+<li>Perfect Forward Secrecy</li>
+<li>AES-256 stream-cipher</li>
+</ul>
+</li>
+<li>D1HT routing table
+
+<ul>
+<li>UDP protocol</li>
+<li>CGEID-based index</li>
+<li>Record type for CGEID/RSA public key tupel</li>
+<li>Record type for CGEIDs of point-2-point mesh neighbours and IPv4/IPv6 adresses of routers</li>
+<li>RSA-signed records</li>
+<li>BGP replacement</li>
+<li>Survives (global) BGP-blackout</li>
+<li>Survives (global) DNS-blackout</li>
+<li>STUN replacement</li>
+</ul>
+</li>
+<li>Conventional BGP-based IPv6 routing
+
+<ul>
+<li>All mesh nodes are egress routers</li>
+<li>All mesh nodes with BGP announcements are ingress routers</li>
+<li>Any BGP operator can publish ingress nodes by scanning the D1HT routing table</li>
+<li>Encrypted IPv4/IPv6 tunneling
+
+<ul>
+<li>NAT Traversal</li>
+<li>TURN replacement</li>
+<li>Nodes without mesh connectivity/mesh border nodes can tunnel the encrypted payload to each other</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<strong>No support</strong> for <em>Global No Such Agency Backup Service</em> <strong>;-)</strong> </li>
+<li>Hardware/OS-independent</li>
+<li>
+<strong><em>GPLv2 license</em></strong> (Flattr button/Bitcoin address must not be manipulated)</li>
+<li>Programming language: C99</li>
+<li>Coding conventions: <a href="https://github.com/renne/ipv6mesh/wiki/Coding-conventions">https://github.com/renne/ipv6mesh/wiki/Coding-conventions</a>
+</li>
+<li>Feature requests and bugs: <a href="https://github.com/renne/ipv6mesh/issues">https://github.com/renne/ipv6mesh/issues</a>
+</li>
+<li>Wiki: <a href="https://github.com/renne/ipv6mesh/wiki">https://github.com/renne/ipv6mesh/wiki</a>
+</li>
+</ul><h2>
+<a name="contact" class="anchor" href="#contact"><span class="octicon octicon-link"></span></a><strong>Contact</strong>
+</h2>
+
+<p>Email: webmaster <em>AT</em> ipv6mesh.eu</p>
+
+<h2>
+<a name="contribute" class="anchor" href="#contribute"><span class="octicon octicon-link"></span></a><strong>Contribute</strong>
+</h2>
+
+<ul>
+<li>You can <strong><em>support project IPv6MESH</em></strong> (hardware, internet connectivity, domains, administrative costs, ...) via Flattr by starring on GitHub</li>
+<li>Fork, write code and make a pull request</li>
+<li>Test and register bugs at <a href="https://github.com/renne/ipv6mesh/issues">https://github.com/renne/ipv6mesh/issues</a>
+</li>
+<li>Contribute to the Wiki at <a href="https://github.com/renne/ipv6mesh/wiki">https://github.com/renne/ipv6mesh/wiki</a>
+</li>
+</ul>
       </section>
       <footer>
         <p>Project maintained by <a href="https://github.com/renne">renne</a></p>
