@@ -9,14 +9,14 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
 * **C**ryptographically **G**enerated **E**ndpoint **I**dentifiers **(CGEIDs)**
   * 32-bit IANA prefix
   * 96-bit SHA-2 HASH of RSA public key
-  * Compatibel with IPv6-addresses
+  * Compatibel with 128-bit IPv6-addresses
   * RSA-based authentication
   * **Decentralized ad-hoc generation**
   * Can be exchanged between users via QR-code, NFC, VCards, etc.
 * End-2-End payload encryption
   * RSA exchange of random stream-cipher key
-  * Perfect Forward Secrecy
   * AES-256 stream-cipher
+  * Perfect Forward Secrecy
 * D1HT routing table
   * UDP protocol
   * CGEID-based index (prevents Sybil attacks)
@@ -27,16 +27,16 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
   * Survives (global) BGP-blackout
   * Survives (global) DNS-blackout
   * STUN replacement
+* Conventional IPv6 routing for LANs
+  * CGEID creation/authorisation and payload encryption on ipv6mesh router
+  * CGEID provisioning for conventional IPv6 devices via DHCPv6
 * Conventional BGP-based IPv6 routing
-  * All mesh nodes are egress routers
-  * All mesh nodes with BGP announcements are ingress routers
-  * Any BGP operator can publish ingress nodes by scanning the D1HT routing table
-  * Encrypted IPv4/IPv6 tunneling
-    * NAT Traversal
-    * TURN replacement
-    * Nodes without mesh connectivity/mesh border nodes can tunnel the encrypted payload to each other
-* Implemetation of Onion routing depends on performance
-* Filing IETF Internet Draft planned when IPv6MESH scales well
+  * All ipv6mesh nodes with conventional IPv6 connectivity are egress routers
+  * All ipv6mesh nodes with conventional IPv6 connectivity AND BGP announcements (32-bit IANA prefix -> IPv6 address) are ingress routers
+  * Any BGP operator can publish BGP routes of ingress nodes by scanning the D1HT routing table
+  * Tunneling via conventional IPv4/IPv6 between ipv6mesh border nodes or nodes without direct connection to the mesh network
+* Implemetation of onion routing depends on performance
+* Filing of IETF Internet Draft planned when IPv6MESH scales well
 * **No support** for *Global No Such Agency Backup Service* **;-)** 
 * Hardware/OS-independent
 * ***GPLv2 license*** (Flattr button/Bitcoin address must not be manipulated)
