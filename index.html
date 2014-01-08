@@ -57,7 +57,7 @@
 <ul>
 <li>32-bit IANA prefix</li>
 <li>96-bit SHA-2 HASH of RSA public key</li>
-<li>Compatibel with IPv6-addresses</li>
+<li>Compatibel with 128-bit IPv6-addresses</li>
 <li>RSA-based authentication</li>
 <li><strong>Decentralized ad-hoc generation</strong></li>
 <li>Can be exchanged between users via QR-code, NFC, VCards, etc.</li>
@@ -67,8 +67,8 @@
 
 <ul>
 <li>RSA exchange of random stream-cipher key</li>
-<li>Perfect Forward Secrecy</li>
 <li>AES-256 stream-cipher</li>
+<li>Perfect Forward Secrecy</li>
 </ul>
 </li>
 <li>D1HT routing table
@@ -85,24 +85,24 @@
 <li>STUN replacement</li>
 </ul>
 </li>
+<li>Conventional IPv6 routing for LANs
+
+<ul>
+<li>CGEID creation/authorisation and payload encryption on ipv6mesh router</li>
+<li>CGEID provisioning for conventional IPv6 devices via DHCPv6</li>
+</ul>
+</li>
 <li>Conventional BGP-based IPv6 routing
 
 <ul>
-<li>All mesh nodes are egress routers</li>
-<li>All mesh nodes with BGP announcements are ingress routers</li>
-<li>Any BGP operator can publish ingress nodes by scanning the D1HT routing table</li>
-<li>Encrypted IPv4/IPv6 tunneling
-
-<ul>
-<li>NAT Traversal</li>
-<li>TURN replacement</li>
-<li>Nodes without mesh connectivity/mesh border nodes can tunnel the encrypted payload to each other</li>
+<li>All ipv6mesh nodes with conventional IPv6 connectivity are egress routers</li>
+<li>All ipv6mesh nodes with conventional IPv6 connectivity AND BGP announcements (32-bit IANA prefix -&gt; IPv6 address) are ingress routers</li>
+<li>Any BGP operator can publish BGP routes of ingress nodes by scanning the D1HT routing table</li>
+<li>Tunneling via conventional IPv4/IPv6 between ipv6mesh border nodes or nodes without direct connection to the mesh network</li>
 </ul>
 </li>
-</ul>
-</li>
-<li>Implemetation of Onion routing depends on performance</li>
-<li>Filing IETF Internet Draft planned when IPv6MESH scales well</li>
+<li>Implemetation of onion routing depends on performance</li>
+<li>Filing of IETF Internet Draft planned when IPv6MESH scales well</li>
 <li>
 <strong>No support</strong> for <em>Global No Such Agency Backup Service</em> <strong>;-)</strong> </li>
 <li>Hardware/OS-independent</li>
