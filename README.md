@@ -9,8 +9,8 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
 ##**Features:**
 * Security based on **4096-bit RSA** key-pairs
 * **C**ryptographically **G**enerated **E**ndpoint **I**dentifiers **(CGEIDs)**
-  * 32-bit IANA prefix
-  * 96-bit SHA-2 HASH of RSA public key
+  * 32-bit IPv6 IANA prefix (XXXX:XXXX::0/32)
+  * 96-bit SHA-2 HASH of RSA public key as interface identifier/user ID
   * Compatibel with 128-bit IPv6-addresses
   * RSA-based authentication
   * **Decentralized ad-hoc generation**
@@ -23,7 +23,7 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
   * UDP transport
   * Bootstrapping
     * IPv6MESH nodes known via Neighbour Discovery Protocol
-    * IPv4/IPv6 anycast address
+    * IPv4/IPv6 anycast address (XXX.XXX.XXX.XXX/32, XXXX:XXXX::1/128)
   * CGEID-based index (prevents Sybil attacks)
   * Record type for CGEID/RSA public key tupel
   * Record type for CGEIDs of point-2-point mesh neighbours and IPv4/IPv6 adresses of routers
@@ -33,13 +33,13 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
   * Survives (global) DNS-blackout
   * STUN replacement
 * Conventional IPv6 routing for LANs
-  * CGEID creation/authorisation and payload encryption on ipv6mesh router
+  * CGEID creation/authorisation and payload encryption on IPv6MESH router
   * CGEID provisioning for conventional IPv6 devices via DHCPv6
 * Conventional BGP-based IPv6 routing
-  * All ipv6mesh nodes with conventional IPv6 connectivity are egress routers
-  * All ipv6mesh nodes with conventional IPv6 connectivity AND BGP announcements (32-bit IANA prefix -> IPv6 address) are ingress routers
+  * All IPv6MESH nodes with conventional IPv6 connectivity are egress routers
+  * All IPv6MESH nodes with conventional IPv6 connectivity AND BGP announcements (XXXX:XXXX::0/32 -> XXXX:XXXX::1/128 -> node IPv6 address) are ingress routers
   * Any BGP operator can publish BGP routes of ingress nodes by scanning the D1HT routing table
-  * Tunneling via conventional IPv4/IPv6 between ipv6mesh border nodes or nodes without direct connection to the mesh network
+  * Tunneling via conventional IPv4/IPv6 between IPv6MESH border nodes or nodes without direct connection to the mesh network
 * Implemetation of onion routing depends on performance
 * Filing of IETF Internet Draft planned when IPv6MESH scales well
 * **No support** for *Global No Such Agency Backup Service* **;-)** 
