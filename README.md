@@ -19,6 +19,9 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
   * Perfect Forward Secrecy
 * D1HT routing table
   * UDP protocol
+  * Bootstrapping
+    * IPv6MESH nodes known via Neighbour Discovery Protocol
+    * IPv4/IPv6 anycast address
   * CGEID-based index (prevents Sybil attacks)
   * Record type for CGEID/RSA public key tupel
   * Record type for CGEIDs of point-2-point mesh neighbours and IPv4/IPv6 adresses of routers
