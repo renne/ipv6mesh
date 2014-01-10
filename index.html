@@ -81,7 +81,7 @@
 
 <ul>
 <li>IPv6MESH nodes known via Neighbour Discovery Protocol</li>
-<li>IPv4/IPv6 anycast address (XXX.XXX.XXX.XXX/32, XXXX:XXXX::1/128)</li>
+<li>IPv4/IPv6 anycast address</li>
 </ul>
 </li>
 <li>CGEID-based index (prevents Sybil attacks)</li>
@@ -95,23 +95,29 @@
 <li>STUN replacement</li>
 </ul>
 </li>
-<li>Conventional IPv6 routing for LANs
+<li>Compatibility with IPv6 LANs
 
 <ul>
 <li>CGEID creation/authorisation and payload encryption on IPv6MESH router</li>
 <li>CGEID provisioning for conventional IPv6 devices via DHCPv6</li>
 </ul>
 </li>
-<li>Conventional BGP-based IPv6 routing
+<li>Compatibility with BGP-routed Internet
 
 <ul>
-<li>All IPv6MESH nodes with conventional IPv6 connectivity are egress routers</li>
-<li>All IPv6MESH nodes with conventional IPv6 connectivity AND BGP announcements (XXXX:XXXX::0/32 -&gt; XXXX:XXXX::1/128 -&gt; node IPv6 address) are ingress routers</li>
-<li>Any BGP operator can publish BGP routes of ingress nodes by scanning the D1HT routing table</li>
-<li>Tunneling via conventional IPv4/IPv6 between IPv6MESH border nodes or nodes without direct connection to the mesh network</li>
+<li>All IPv6MESH nodes with BGP-based IPv6 connectivity are ingress/egress border routers</li>
+<li>Ingress routing via Anycast addresses
+
+<ul>
+<li>IPv6: XXXX:XXXX::0/32    -&gt; XXXX:XXXX::1/128 -&gt; IPv6 addresses of IPv6MESH nodes</li>
+<li>IPv4: XXX.XXX.XXX.XXX/32 -&gt;                     IPv4 addresses of IPv6MESH nodes</li>
+<li>Any BGP operator can publish BGP routes by scanning the D1HT routing table</li>
 </ul>
 </li>
-<li>Implemetation of onion routing depends on performance</li>
+</ul>
+</li>
+<li>Tunneling between IPv6MESH clouds/lonely nodes via BGP-routed IPv4/IPv6 protocol</li>
+<li>Implementation of onion routing depends on performance</li>
 <li>Filing of IETF Internet Draft planned when IPv6MESH scales well</li>
 <li>
 <strong>No support</strong> for <em>Global No Such Agency Backup Service</em> <strong>;-)</strong> </li>
