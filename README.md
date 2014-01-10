@@ -28,6 +28,7 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
   * Record type for CGEID/RSA public key tupel
   * Record type for CGEIDs of point-2-point mesh neighbours and IPv4/IPv6 adresses of routers
   * Record type for NAT64 proxy routers
+  * Record type for geographic position of IPv6MESH nodes to provide network coverage map
   * RSA-signed records (prevents Spartacus attacks)
   * BGP replacement
   * Survives (global) BGP-blackout
