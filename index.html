@@ -57,8 +57,8 @@
 <strong>C</strong>ryptographically <strong>G</strong>enerated <strong>E</strong>ndpoint <strong>I</strong>dentifiers <strong>(CGEIDs)</strong>
 
 <ul>
-<li>32-bit IANA prefix</li>
-<li>96-bit SHA-2 HASH of RSA public key</li>
+<li>32-bit IPv6 IANA prefix (XXXX:XXXX::0/32)</li>
+<li>96-bit SHA-2 HASH of RSA public key as interface identifier</li>
 <li>Compatibel with 128-bit IPv6-addresses</li>
 <li>RSA-based authentication</li>
 <li><strong>Decentralized ad-hoc generation</strong></li>
@@ -68,7 +68,7 @@
 <li>End-2-End payload encryption
 
 <ul>
-<li>RSA exchange of random stream-cipher key</li>
+<li>Exchange of random symmetric stream-cipher key by asymmetric RSA key pair</li>
 <li>AES-256 stream-cipher</li>
 <li>Perfect Forward Secrecy</li>
 </ul>
@@ -76,17 +76,18 @@
 <li>D1HT routing table
 
 <ul>
-<li>UDP protocol</li>
+<li>UDP transport</li>
 <li>Bootstrapping
 
 <ul>
 <li>IPv6MESH nodes known via Neighbour Discovery Protocol</li>
-<li>IPv4/IPv6 anycast address</li>
+<li>IPv4/IPv6 anycast address (XXX.XXX.XXX.XXX/32, XXXX:XXXX::1/128)</li>
 </ul>
 </li>
 <li>CGEID-based index (prevents Sybil attacks)</li>
 <li>Record type for CGEID/RSA public key tupel</li>
 <li>Record type for CGEIDs of point-2-point mesh neighbours and IPv4/IPv6 adresses of routers</li>
+<li>Record type for NAT64 proxy routers</li>
 <li>RSA-signed records (prevents Spartacus attacks)</li>
 <li>BGP replacement</li>
 <li>Survives (global) BGP-blackout</li>
@@ -97,17 +98,17 @@
 <li>Conventional IPv6 routing for LANs
 
 <ul>
-<li>CGEID creation/authorisation and payload encryption on ipv6mesh router</li>
+<li>CGEID creation/authorisation and payload encryption on IPv6MESH router</li>
 <li>CGEID provisioning for conventional IPv6 devices via DHCPv6</li>
 </ul>
 </li>
 <li>Conventional BGP-based IPv6 routing
 
 <ul>
-<li>All ipv6mesh nodes with conventional IPv6 connectivity are egress routers</li>
-<li>All ipv6mesh nodes with conventional IPv6 connectivity AND BGP announcements (32-bit IANA prefix -&gt; IPv6 address) are ingress routers</li>
+<li>All IPv6MESH nodes with conventional IPv6 connectivity are egress routers</li>
+<li>All IPv6MESH nodes with conventional IPv6 connectivity AND BGP announcements (XXXX:XXXX::0/32 -&gt; XXXX:XXXX::1/128 -&gt; node IPv6 address) are ingress routers</li>
 <li>Any BGP operator can publish BGP routes of ingress nodes by scanning the D1HT routing table</li>
-<li>Tunneling via conventional IPv4/IPv6 between ipv6mesh border nodes or nodes without direct connection to the mesh network</li>
+<li>Tunneling via conventional IPv4/IPv6 between IPv6MESH border nodes or nodes without direct connection to the mesh network</li>
 </ul>
 </li>
 <li>Implemetation of onion routing depends on performance</li>
