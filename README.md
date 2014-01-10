@@ -23,7 +23,7 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
   * UDP transport
   * Bootstrapping
     * IPv6MESH nodes known via Neighbour Discovery Protocol
-    * IPv4/IPv6 anycast address (XXX.XXX.XXX.XXX/32, XXXX:XXXX::1/128)
+    * IPv4/IPv6 anycast address
   * CGEID-based index (prevents Sybil attacks)
   * Record type for CGEID/RSA public key tupel
   * Record type for CGEIDs of point-2-point mesh neighbours and IPv4/IPv6 adresses of routers
@@ -33,15 +33,17 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
   * Survives (global) BGP-blackout
   * Survives (global) DNS-blackout
   * STUN replacement
-* Conventional IPv6 routing for LANs
+* Compatibility with IPv6 LANs
   * CGEID creation/authorisation and payload encryption on IPv6MESH router
   * CGEID provisioning for conventional IPv6 devices via DHCPv6
-* Conventional BGP-based IPv6 routing
-  * All IPv6MESH nodes with conventional IPv6 connectivity are egress routers
-  * All IPv6MESH nodes with conventional IPv6 connectivity AND BGP announcements (XXXX:XXXX::0/32 -> XXXX:XXXX::1/128 -> node IPv6 address) are ingress routers
-  * Any BGP operator can publish BGP routes of ingress nodes by scanning the D1HT routing table
-  * Tunneling via conventional IPv4/IPv6 between IPv6MESH border nodes or nodes without direct connection to the mesh network
-* Implemetation of onion routing depends on performance
+* Compatibility with BGP-routed Internet
+  * All IPv6MESH nodes with BGP-based IPv6 connectivity are ingress/egress border routers
+  * Ingress routing via Anycast addresses
+    * IPv6: XXXX:XXXX::0/32    -> XXXX:XXXX::1/128 -> IPv6 addresses of IPv6MESH nodes
+    * IPv4: XXX.XXX.XXX.XXX/32 ->                     IPv4 addresses of IPv6MESH nodes
+    * Any BGP operator can publish BGP routes by scanning the D1HT routing table
+* Tunneling between IPv6MESH clouds/lonely nodes via BGP-routed IPv4/IPv6 protocol
+* Implementation of onion routing depends on performance
 * Filing of IETF Internet Draft planned when IPv6MESH scales well
 * **No support** for *Global No Such Agency Backup Service* **;-)** 
 * Hardware/OS-independent
