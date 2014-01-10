@@ -40,6 +40,7 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
   * All IPv6MESH nodes with conventional IPv6 connectivity AND BGP announcements (XXXX:XXXX::0/32 -> XXXX:XXXX::1/128 -> node IPv6 address) are ingress routers
   * Any BGP operator can publish BGP routes of ingress nodes by scanning the D1HT routing table
   * Tunneling via conventional IPv4/IPv6 between IPv6MESH border nodes or nodes without direct connection to the mesh network
+* IPv4-proxying via NAT64
 * Implemetation of onion routing depends on performance
 * Filing of IETF Internet Draft planned when IPv6MESH scales well
 * **No support** for *Global No Such Agency Backup Service* **;-)** 
