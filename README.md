@@ -10,13 +10,13 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
 * Security based on **4096-bit RSA** key-pairs
 * **C**ryptographically **G**enerated **E**ndpoint **I**dentifiers **(CGEIDs)**
   * 32-bit IPv6 IANA prefix (XXXX:XXXX::0/32)
-  * 96-bit SHA-2 HASH of RSA public key as interface identifier/user ID
+  * 96-bit SHA-2 HASH of RSA public key as interface identifier
   * Compatibel with 128-bit IPv6-addresses
   * RSA-based authentication
   * **Decentralized ad-hoc generation**
   * Can be exchanged between users via QR-code, NFC, VCards, etc.
 * End-2-End payload encryption
-  * RSA exchange of random stream-cipher key
+  * Exchange of random symmetric stream-cipher key by asymmetric RSA key pair
   * AES-256 stream-cipher
   * Perfect Forward Secrecy
 * D1HT routing table
