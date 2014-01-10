@@ -20,7 +20,7 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
   * AES-256 stream-cipher
   * Perfect Forward Secrecy
 * D1HT routing table
-  * UDP protocol
+  * UDP transport
   * Bootstrapping
     * IPv6MESH nodes known via Neighbour Discovery Protocol
     * IPv4/IPv6 anycast address
