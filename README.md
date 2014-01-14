@@ -25,21 +25,21 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
     * IPv6MESH nodes known via Neighbour Discovery Protocol
     * IPv4/IPv6 anycast address
   * CGEID-based index (prevents Sybil attacks)
-  * Record type for CGEID/RSA public key tupel
-  * Record type for CGEIDs of point-2-point mesh neighbours and IPv4/IPv6 adresses of routers
-  * Record type for alternate CGEIDs (load-balancing, redundancy)
-  * Record type for NAT64 proxy routers
-  * Record type for geographic position of IPv6MESH nodes to provide network coverage map
   * RSA-signed records (prevents Spartacus attacks)
-  * BGP replacement
-  * Survives (global) BGP-blackout
-  * Survives (global) DNS-blackout
-  * STUN replacement
+  * Record types of a IPv6MESH node
+    * CGEID/RSA public key tupel for authentication
+    * Point-2-Point IPv6MESH neighbours
+    * IPv4/IPv6 addresses
+    * Alternate CGEIDs (load-balancing, redundancy)
+    * NAT64 support
+    * Geographic position to provide distributed network coverage map
+  * Replaces BGP and STUN
+  * Survives (global) BGP and/or DNS blackout
 * Compatibility with IPv6 LANs
   * CGEID creation/authorisation and payload encryption on IPv6MESH router
   * CGEID provisioning for conventional IPv6 devices via DHCPv6
 * Compatibility with BGP-routed Internet
-  * All IPv6MESH nodes with BGP-based IPv6 connectivity are ingress/egress border routers
+  * All IPv6MESH nodes with IPv6 connectivity are ingress/egress border routers
   * Ingress routing via Anycast addresses
     * IPv6: XXXX:XXXX::0/32    -> XXXX:XXXX::1/128 -> IPv6 addresses of IPv6MESH nodes
     * IPv4: XXX.XXX.XXX.XXX/32 ->                     IPv4 addresses of IPv6MESH nodes
