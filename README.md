@@ -34,7 +34,7 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
     * Alternate CGEIDs (load-balancing, redundancy)
     * NAT64 support
     * Geographic position to provide distributed network coverage map
-  * Replaces BGP and STUN
+  * Replaces BGP, STUN and LISP map-servers/resolvers
   * Survives (global) BGP and/or DNS blackout
 * Compatibility with IPv6 LANs
   * CGEID creation/authorisation and payload encryption on IPv6MESH router
@@ -45,7 +45,9 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
     * IPv6: XXXX:XXXX::0/32    -> XXXX:XXXX::1/128 -> IPv6 addresses of IPv6MESH nodes
     * IPv4: XXX.XXX.XXX.XXX/32 ->                     IPv4 addresses of IPv6MESH nodes
     * Any BGP operator can scan the D1HT and publish BGP routes via e.g. Quagga extension
-* Tunneling between IPv6MESH clouds/isolated nodes via BGP-routed IPv4/IPv6 protocol
+* LISP-tunneling
+  * Connectivity between IPv6MESH clouds/isolated nodes
+  * IPv4/IPv6 locators
 * Implementation of onion routing depends on performance
 * Physical connectivity
   * Wires and radio links can be DIY-installed between homes
