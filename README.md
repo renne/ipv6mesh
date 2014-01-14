@@ -16,6 +16,10 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
   * **Decentralized ad-hoc generation**
   * Import/export/backup (CGEID, public/private key) via PKCS12 files named "&lt;CGEID&gt;.p12"
   * CGEID can be exchanged between users via QR-code, NFC, VCards, etc.
+  * IPv6MESH router operators don't have to provide any public IPv6 addresses
+* NAT64 gateway support
+  * Provide connectivity to IPv4 hosts
+  * Can be registered as internet service provider to avoid german "Störerhaftung"
 * End-2-End payload encryption
   * Exchange of random symmetric stream-cipher key by asymmetric RSA key pair
   * AES-256 stream-cipher
