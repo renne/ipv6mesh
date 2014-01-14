@@ -1,0 +1,224 @@
+ 
+
+
+
+INTERNET-DRAFT                                              Rene Bartsch
+Intended Status: Proposed Standard                    Internet Community
+Expires: <Expiry Date>                                      <Issue Date>
+
+
+                            <Standard Name> 
+                  draft-ietf-groupOrSubmitter-name-00
+
+
+Abstract
+
+   <Abstract Text>
+
+
+Status of this Memo
+
+   This Internet-Draft is submitted to IETF in full conformance with the
+   provisions of BCP 78 and BCP 79.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF), its areas, and its working groups.  Note that
+   other groups may also distribute working documents as
+   Internet-Drafts.
+
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as "work in progress."
+
+   The list of current Internet-Drafts can be accessed at
+   http://www.ietf.org/1id-abstracts.html
+
+   The list of Internet-Draft Shadow Directories can be accessed at
+   http://www.ietf.org/shadow.html
+
+
+Copyright and License Notice
+
+   Copyright (c) <year> IETF Trust and the persons identified as the
+   document authors. All rights reserved.
+
+   This document is subject to BCP 78 and the IETF Trust's Legal
+   Provisions Relating to IETF Documents
+   (http://trustee.ietf.org/license-info) in effect on the date of
+   publication of this document. Please review these documents
+   carefully, as they describe your rights and restrictions with respect
+   to this document. Code Components extracted from this document must
+   include Simplified BSD License text as described in Section 4.e of
+ 
+
+
+<Author>                 Expires <Expiry Date>                  [Page 1]
+
+INTERNET DRAFT              <Document Title>                <Issue Date>
+
+
+   the Trust Legal Provisions and are provided without warranty as
+   described in the Simplified BSD License.
+
+
+
+Table of Contents
+
+   1  Introduction  . . . . . . . . . . . . . . . . . . . . . . . . .  3
+     1.1  Terminology . . . . . . . . . . . . . . . . . . . . . . . .  3
+   2.  Title  . . . . . . . . . . . . . . . . . . . . . . . . . . . .  3
+   3  Security Considerations . . . . . . . . . . . . . . . . . . . .  4
+   4  IANA Considerations . . . . . . . . . . . . . . . . . . . . . .  4
+   5  References  . . . . . . . . . . . . . . . . . . . . . . . . . .  4
+     5.1  Normative References  . . . . . . . . . . . . . . . . . . .  4
+     5.2  Informative References  . . . . . . . . . . . . . . . . . .  4
+   Authors' Addresses . . . . . . . . . . . . . . . . . . . . . . . .  4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+<Author>                 Expires <Expiry Date>                  [Page 2]
+
+INTERNET DRAFT              <Document Title>                <Issue Date>
+
+
+1  Introduction
+
+   <Introduction Text>
+
+1.1  Terminology
+
+   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+   "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
+   document are to be interpreted as described in RFC 2119 [RFC2119].
+
+
+2.  Title
+
+   <Document text>
+
+      Definitions and code {
+        line 1
+        line 2
+      }
+
+
+   Special characters examples:
+
+   The characters  , , , 
+   However, the characters \0, \&, \%, \" are displayed.
+
+   .ti 0  is displayed in text instead of used as a directive. 
+   .\"  is displayed in document instead of being treated as a comment
+
+   C:\dir\subdir\file.ext  Shows inclusion of backslash "\".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+<Author>                 Expires <Expiry Date>                  [Page 3]
+
+INTERNET DRAFT              <Document Title>                <Issue Date>
+
+
+3  Security Considerations
+
+   <Security considerations text>
+
+
+4  IANA Considerations
+
+   <IANA considerations text>
+
+
+5  References
+
+5.1  Normative References
+
+   [KEYWORDS] Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", BCP 14, RFC 2119, March 1997.
+
+   [RFC1776]  Crocker, S., "The Address is the Message", RFC 1776, April
+              1 1995.
+
+   [TRUTHS]   Callon, R., "The Twelve Networking Truths", RFC 1925,
+              April 1 1996.
+
+
+5.2  Informative References
+
+   [EVILBIT]  Bellovin, S., "The Security Flag in the IPv4 Header",
+              RFC 3514, April 1 2003.
+
+   [RFC5513]  Farrel, A., "IANA Considerations for Three Letter
+              Acronyms", RFC 5513, April 1 2009.
+
+   [RFC5514]  Vyncke, E., "IPv6 over Social Networks", RFC 5514, April 1
+              2009.
+
+
+
+Authors' Addresses
+
+
+   Rene "Renne" Bartsch
+   EMail: ietf@bartschnet.de
+
+
+
+
+
+
+
+
+
+<Author>                 Expires <Expiry Date>                  [Page 4]
