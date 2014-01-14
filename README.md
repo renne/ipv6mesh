@@ -47,14 +47,16 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
 * Tunneling between IPv6MESH clouds/isolated nodes via BGP-routed IPv4/IPv6 protocol
 * Implementation of onion routing depends on performance
 * Physical connectivity
+  * Wires and radio links can be DIY-installed between homes
   * Wired communication
     * IEEE 802.3 Clause 38 (1000Base-SX/LX) preferred
     * IEEE 802.3 Clause 40 (1000Base-T) can be used with surge protection
-    * Wires can be DIY-installed between homes
   * Radio communication
     * IEEE 802.11ac preferred (802.11h necessary in most countries)
     * IEEE 802.11ad as next generation (lobbyists needed to get reserved frequency range)
-    * IPv6MESH nodes SHALL use 2-dimensional beamforming and transmit power control to reduce electromagnetic interferences on other IPv6MESH nodes
+    * Reduction of electromagnetic interferences on other IPv6MESH nodes
+      * Transmit Power Control
+      * 2-dimensional beamforming
     * Unencrypted (B)SSID "IETFRFC&lt;rfc number&gt;" ("ipv6mesh.eu" until formal release of RFC)
 * Filing of IETF Internet Draft planned when IPv6MESH scales well
 * **No support** for *Global No Such Agency Backup Service* **;-)** 
