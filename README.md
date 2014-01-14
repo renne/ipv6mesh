@@ -19,7 +19,7 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
   * Exchange of random symmetric stream-cipher key by asymmetric RSA key pair
   * AES-256 stream-cipher
   * Perfect Forward Secrecy
-* D1HT routing table
+* D1HT for distributed information about hosts
   * UDP transport
   * Bootstrapping
     * IPv6MESH nodes known via Neighbour Discovery Protocol
@@ -43,7 +43,7 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
   * Ingress routing via Anycast addresses
     * IPv6: XXXX:XXXX::0/32    -> XXXX:XXXX::1/128 -> IPv6 addresses of IPv6MESH nodes
     * IPv4: XXX.XXX.XXX.XXX/32 ->                     IPv4 addresses of IPv6MESH nodes
-    * Any BGP operator can publish BGP routes by scanning the D1HT routing table
+    * Any BGP operator can scan the D1HT and publish BGP routes via e.g. Quagga extension
 * Tunneling between IPv6MESH clouds/isolated nodes via BGP-routed IPv4/IPv6 protocol
 * Implementation of onion routing depends on performance
 * Physical connectivity
