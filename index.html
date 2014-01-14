@@ -45,7 +45,7 @@
 
 <p><strong>IPv6MESH</strong> is a mesh network extension for the Internet Protocol 6 (OSI Layer 3). Every node generates IPv6 addresses ad-hoc and connects to it's neighbour nodes which allows to deploy large number of nodes automagically.</p>
 
-<p><strong>IPv6MESH</strong> can be used to set up emergency communication networks, vehicle-2-vehicle communication (car-2-car, ship-2-ship), can close gaps in networks by e.g. integrating nodes into reflector posts, streetlights, trees, moored buoys or balloons or just serve as a community network.</p>
+<p><strong>IPv6MESH</strong> can be used to set up emergency communication networks, vehicle-2-vehicle communication (car-2-car, ship-2-ship, satellite-2-satellite), can close gaps in networks by e.g. integrating nodes into reflector posts, streetlights, trees, moored buoys or balloons, geostationary satellites or just serve as a community network.</p>
 
 <h2>
 <a name="features" class="anchor" href="#features"><span class="octicon octicon-link"></span></a><strong>Features:</strong>
@@ -58,12 +58,12 @@
 
 <ul>
 <li>32-bit IPv6 IANA prefix (XXXX:XXXX::0/32)</li>
-<li>96-bit SHA-2 HASH of RSA public key as interface identifier</li>
-<li>Compatibel with 128-bit IPv6-addresses</li>
-<li>RSA-based authentication</li>
+<li>96-bit SHA-2 hash of RSA public key as interface identifier</li>
+<li>Compatibel with 128 bit IPv6-addresses</li>
+<li>RSA based authentication</li>
 <li><strong>Decentralized ad-hoc generation</strong></li>
 <li>Import/export/backup (CGEID, public/private key) via PKCS12 files named "&lt;CGEID&gt;.p12"</li>
-<li>CGEID can be exchanged between users via QR-code, NFC, VCards, etc.</li>
+<li>CGEID can be exchanged between users via QR code, NFC, VCards, etc.</li>
 <li>IPv6MESH router operators don't have to provide any public IPv6 addresses</li>
 </ul>
 </li>
@@ -71,14 +71,15 @@
 
 <ul>
 <li>Provide connectivity to IPv4 hosts</li>
+<li>Public IPv4 addresses necessary on NAT64 gateway</li>
 <li>Can be registered as internet service provider to avoid german "Störerhaftung"</li>
 </ul>
 </li>
 <li>End-2-End payload encryption
 
 <ul>
-<li>Exchange of random symmetric stream-cipher key by asymmetric RSA key pair</li>
-<li>AES-256 stream-cipher</li>
+<li>Exchange of random symmetric stream cipher key by asymmetric RSA key pair</li>
+<li>AES256 stream cipher</li>
 <li>Perfect Forward Secrecy</li>
 </ul>
 </li>
@@ -165,6 +166,7 @@
 <li>Unencrypted (B)SSID "IETFRFC&lt;rfc number&gt;" ("ipv6mesh.eu" until formal release of RFC)</li>
 </ul>
 </li>
+<li>Laser Communication Terminals</li>
 </ul>
 </li>
 <li>Filing of IETF Internet Draft planned when IPv6MESH scales well</li>
