@@ -38,7 +38,9 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
     * IPv4/IPv6 addresses
     * Alternate CGEIDs (load-balancing, redundancy)
     * NAT64 support
-    * Geographic position to provide distributed network coverage map
+    * Geographic position
+      * Distributed network coverage map
+      * Positioning of laser communication terminals
   * Replaces BGP, STUN and LISP map-servers/resolvers
   * Survives (global) BGP and/or DNS blackout
 * Compatibility with IPv6 LANs
