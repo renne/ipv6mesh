@@ -14,7 +14,8 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
   * Compatibel with 128-bit IPv6-addresses
   * RSA-based authentication
   * **Decentralized ad-hoc generation**
-  * Can be exchanged between users via QR-code, NFC, VCards, etc.
+  * Import/export/backup (CGEID, public/private key) via PKCS12 files named "&lt;CGEID&gt;.p12"
+  * CGEID can be exchanged between users via QR-code, NFC, VCards, etc.
 * End-2-End payload encryption
   * Exchange of random symmetric stream-cipher key by asymmetric RSA key pair
   * AES-256 stream-cipher
