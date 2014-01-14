@@ -41,6 +41,7 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
     * Geographic position
       * Distributed network coverage map
       * Positioning of laser communication terminals
+    * Reverse DNS
   * Replaces BGP, STUN and LISP map-servers/resolvers
   * Survives (global) BGP and/or DNS blackout
 * Compatibility with IPv6 LANs
