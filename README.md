@@ -46,6 +46,16 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
     * Any BGP operator can publish BGP routes by scanning the D1HT routing table
 * Tunneling between IPv6MESH clouds/isolated nodes via BGP-routed IPv4/IPv6 protocol
 * Implementation of onion routing depends on performance
+* Physical connectivity
+  * Wired communication
+    * IEEE 802.3 Clause 38 (1000Base-SX/LX) preferred
+    * IEEE 802.3 Clause 40 (1000Base-T) can be used with surge protection
+    * Wires can be DIY-installed between homes
+  * Radio communication
+    * IEEE 802.11ac preferred (802.11h necessary in most countries)
+    * IEEE 802.11ad as next generation (lobbyists needed to get reserved frequency range)
+    * Nodes SHALL use 3-dimensional beamforming and transmit power control to reduce electromagnetic interferences 
+    * Unencrypted (B)SSID "IETFRFC&lt;rfc number&gt;" (&lt;rfc number&gt; = "0000" until formal release of RFC)
 * Filing of IETF Internet Draft planned when IPv6MESH scales well
 * **No support** for *Global No Such Agency Backup Service* **;-)** 
 * Hardware/OS-independent
