@@ -3,26 +3,27 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
 
 **IPv6MESH** is a mesh network extension for the Internet Protocol 6 (OSI Layer 3). Every node generates IPv6 addresses ad-hoc and connects to it's neighbour nodes which allows to deploy large number of nodes automagically.
 
-**IPv6MESH** can be used to set up emergency communication networks, vehicle-2-vehicle communication (car-2-car, ship-2-ship), can close gaps in networks by e.g. integrating nodes into reflector posts, streetlights, trees, moored buoys or balloons or just serve as a community network.
+**IPv6MESH** can be used to set up emergency communication networks, vehicle-2-vehicle communication (car-2-car, ship-2-ship, satellite-2-satellite), can close gaps in networks by e.g. integrating nodes into reflector posts, streetlights, trees, moored buoys or balloons, geostationary satellites or just serve as a community network.
 
 
 ##**Features:**
 * Security based on **4096-bit RSA** key-pairs
 * **C**ryptographically **G**enerated **E**ndpoint **I**dentifiers **(CGEIDs)**
   * 32-bit IPv6 IANA prefix (XXXX:XXXX::0/32)
-  * 96-bit SHA-2 HASH of RSA public key as interface identifier
-  * Compatibel with 128-bit IPv6-addresses
-  * RSA-based authentication
+  * 96-bit SHA-2 hash of RSA public key as interface identifier
+  * Compatibel with 128 bit IPv6-addresses
+  * RSA based authentication
   * **Decentralized ad-hoc generation**
   * Import/export/backup (CGEID, public/private key) via PKCS12 files named "&lt;CGEID&gt;.p12"
-  * CGEID can be exchanged between users via QR-code, NFC, VCards, etc.
+  * CGEID can be exchanged between users via QR code, NFC, VCards, etc.
   * IPv6MESH router operators don't have to provide any public IPv6 addresses
 * NAT64 gateway support
   * Provide connectivity to IPv4 hosts
+  * Public IPv4 addresses necessary on NAT64 gateway
   * Can be registered as internet service provider to avoid german "Störerhaftung"
 * End-2-End payload encryption
-  * Exchange of random symmetric stream-cipher key by asymmetric RSA key pair
-  * AES-256 stream-cipher
+  * Exchange of random symmetric stream cipher key by asymmetric RSA key pair
+  * AES256 stream cipher
   * Perfect Forward Secrecy
 * D1HT for distributed information about hosts
   * UDP transport
@@ -65,6 +66,7 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
       * Transmit Power Control
       * 2-dimensional beamforming
     * Unencrypted (B)SSID "IETFRFC&lt;rfc number&gt;" ("ipv6mesh.eu" until formal release of RFC)
+  * Laser Communication Terminals
 * Filing of IETF Internet Draft planned when IPv6MESH scales well
 * **No support** for *Global No Such Agency Backup Service* **;-)** 
 * Hardware/OS-independent
