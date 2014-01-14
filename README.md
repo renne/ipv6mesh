@@ -44,7 +44,7 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
     * IPv6: XXXX:XXXX::0/32    -> XXXX:XXXX::1/128 -> IPv6 addresses of IPv6MESH nodes
     * IPv4: XXX.XXX.XXX.XXX/32 ->                     IPv4 addresses of IPv6MESH nodes
     * Any BGP operator can publish BGP routes by scanning the D1HT routing table
-* Tunneling between IPv6MESH clouds/lonely nodes via BGP-routed IPv4/IPv6 protocol
+* Tunneling between IPv6MESH clouds/isolated nodes via BGP-routed IPv4/IPv6 protocol
 * Implementation of onion routing depends on performance
 * Filing of IETF Internet Draft planned when IPv6MESH scales well
 * **No support** for *Global No Such Agency Backup Service* **;-)** 
