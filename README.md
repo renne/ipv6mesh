@@ -55,7 +55,7 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
     * IEEE 802.11ac preferred (802.11h necessary in most countries)
     * IEEE 802.11ad as next generation (lobbyists needed to get reserved frequency range)
     * IPv6MESH nodes SHALL use 2-dimensional beamforming and transmit power control to reduce electromagnetic interferences on other IPv6MESH nodes
-    * Unencrypted (B)SSID "IETFRFC&lt;rfc number&gt;" ("IPv6MESH" until formal release of RFC)
+    * Unencrypted (B)SSID "IETFRFC&lt;rfc number&gt;" ("ipv6mesh.eu" until formal release of RFC)
 * Filing of IETF Internet Draft planned when IPv6MESH scales well
 * **No support** for *Global No Such Agency Backup Service* **;-)** 
 * Hardware/OS-independent
