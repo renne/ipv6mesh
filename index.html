@@ -85,16 +85,20 @@
 </ul>
 </li>
 <li>CGEID-based index (prevents Sybil attacks)</li>
-<li>Record type for CGEID/RSA public key tupel</li>
-<li>Record type for CGEIDs of point-2-point mesh neighbours and IPv4/IPv6 adresses of routers</li>
-<li>Record type for alternate CGEIDs (load-balancing, redundancy)</li>
-<li>Record type for NAT64 proxy routers</li>
-<li>Record type for geographic position of IPv6MESH nodes to provide network coverage map</li>
 <li>RSA-signed records (prevents Spartacus attacks)</li>
-<li>BGP replacement</li>
-<li>Survives (global) BGP-blackout</li>
-<li>Survives (global) DNS-blackout</li>
-<li>STUN replacement</li>
+<li>Record types of a IPv6MESH node
+
+<ul>
+<li>CGEID/RSA public key tupel for authentication</li>
+<li>Point-2-Point IPv6MESH neighbours</li>
+<li>IPv4/IPv6 addresses</li>
+<li>Alternate CGEIDs (load-balancing, redundancy)</li>
+<li>NAT64 support</li>
+<li>Geographic position to provide distributed network coverage map</li>
+</ul>
+</li>
+<li>Replaces BGP and STUN</li>
+<li>Survives (global) BGP and/or DNS blackout</li>
 </ul>
 </li>
 <li>Compatibility with IPv6 LANs
@@ -107,7 +111,7 @@
 <li>Compatibility with BGP-routed Internet
 
 <ul>
-<li>All IPv6MESH nodes with BGP-based IPv6 connectivity are ingress/egress border routers</li>
+<li>All IPv6MESH nodes with IPv6 connectivity are ingress/egress border routers</li>
 <li>Ingress routing via Anycast addresses
 
 <ul>
@@ -118,7 +122,7 @@
 </li>
 </ul>
 </li>
-<li>Tunneling between IPv6MESH clouds/lonely nodes via BGP-routed IPv4/IPv6 protocol</li>
+<li>Tunneling between IPv6MESH clouds/isolated nodes via BGP-routed IPv4/IPv6 protocol</li>
 <li>Implementation of onion routing depends on performance</li>
 <li>Filing of IETF Internet Draft planned when IPv6MESH scales well</li>
 <li>
