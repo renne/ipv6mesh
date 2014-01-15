@@ -17,10 +17,6 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
   * Import/export/backup (CGEID, public/private key) via PKCS12 files named "&lt;CGEID&gt;.p12"
   * CGEID can be exchanged between users via QR code, NFC, VCards, etc.
   * IPv6MESH router operators don't have to provide any public IPv6 addresses
-* NAT64 gateway support
-  * Provide connectivity to IPv4 hosts
-  * Public IPv4 addresses necessary on NAT64 gateway
-  * Can be registered as internet service provider to avoid german "Störerhaftung"
 * End-2-End payload encryption
   * Exchange of random symmetric stream cipher key by asymmetric RSA key pair
   * AES256 stream cipher
@@ -35,27 +31,43 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
   * Record types of a IPv6MESH node
     * CGEID/RSA public key tupel for authentication
     * Point-2-Point IPv6MESH neighbours
-    * IPv4/IPv6 addresses
+    * Public IPv4/IPv6 addresses
     * Alternate CGEIDs (load-balancing, redundancy)
     * NAT64 support
     * Geographic position
       * Distributed network coverage map
       * Positioning of laser communication terminals
     * Reverse DNS
-  * Replaces BGP, STUN and LISP map-servers/resolvers
-  * Survives (global) BGP and/or DNS blackout
+  * Replaces and survives (global) blackout of
+    * BGP
+    * STUN servers
+    * LISP map-servers
+    * LISP map-resolvers
+    * CGEID zone reverse DNS name servers
 * Compatibility with IPv6 LANs
-  * CGEID creation/authorisation and payload encryption on IPv6MESH router
-  * CGEID provisioning for conventional IPv6 devices via DHCPv6
-* Compatibility with BGP-routed Internet
-  * All IPv6MESH nodes with IPv6 connectivity are ingress/egress border routers
-  * Ingress routing via Anycast addresses
-    * IPv6: XXXX:XXXX::0/32    -> XXXX:XXXX::1/128 -> IPv6 addresses of IPv6MESH nodes
-    * IPv4: XXX.XXX.XXX.XXX/32 ->                     IPv4 addresses of IPv6MESH nodes
-    * Any BGP operator can scan the D1HT and publish BGP routes via e.g. Quagga extension
+  * CGEID creation/authorisation/payload encryption on IPv6MESH default gateway
+  * CGEID provisioning of conventional IPv6 devices via DHCPv6
+* Compatibility with BGP-routed internet
+  * IPv6 ingress routing via anycast address
+    * BGP: &lt;CGEID prefix&gt;::0/32 -> &lt;CGEID prefix&gt;::1/128 -> IPv6 addresses of all reliable IPv6MESH nodes
+  * All IPv6MESH nodes with IPv6 connectivity are egress border routers
+  * IPv4 anycast address
+    * BGP: XXX.XXX.XXX.XXX/32 -> IPv4 addresses of all reliable IPv6MESH nodes
+  * Any BGP operator can scan the D1HT and publish BGP routes via e.g. Quagga extension
+  * NAT64 gateway support
+    * Provides connectivity to IPv4 hosts
+    * Public IPv4 addresses necessary on NAT64 gateway
+    * Can be registered as internet service provider to avoid german "Störerhaftung"
+  * Reverse DNS of CGEID prefix
+    * All nodes with IPv4/IPv6 connectivity are authoritative anycast nameservers
+    * UDP only
+    * DNS server glue records
+      * IPv6: 1::&lt;CGEID prefix&gt;.ip6.arpa. 86400 NS &lt;CGEID prefix&gt;::1/128
+      * IPv4: 1::&lt;CGEID prefix&gt;.ip6.arpa. 86400 NS XXX.XXX.XXX.XXX/32
 * LISP-tunneling
   * Connectivity between IPv6MESH clouds/isolated nodes
-  * IPv4/IPv6 locators
+  * IPv4/IPv6 RLOCS
+  * CGEID -> RLOC mapping via D1HT
 * Implementation of onion routing depends on performance
 * Physical connectivity
   * Wires and radio links can be DIY-installed between homes
