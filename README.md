@@ -1,7 +1,7 @@
 IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6mesh.eu&title=IPv6MESH&language=C99&tags=github&category=software"><img src="http://api.flattr.com/button/flattr-badge-large.png" height="24em" width="16%"/></a>
 ========
 
-**IPv6MESH** is a mesh network extension for the Internet Protocol 6 (OSI Layer 3). Every node generates IPv6 addresses ad-hoc and connects to it's neighbour nodes which allows to deploy large number of nodes automagically.
+**IPv6MESH** will be a mesh network extension for the Internet Protocol 6 (OSI Layer 3). Every node generates IPv6 addresses ad-hoc and connects to it's neighbour nodes which allows to deploy large number of nodes automagically.
 
 **IPv6MESH** can be used to set up emergency communication networks, vehicle-2-vehicle communication (car-2-car, ship-2-ship, satellite-2-satellite), can close gaps in networks by e.g. integrating nodes into reflector posts, streetlights, trees, moored buoys or balloons, geostationary satellites or just serve as a community network.
 
