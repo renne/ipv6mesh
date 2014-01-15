@@ -67,14 +67,6 @@
 <li>IPv6MESH router operators don't have to provide any public IPv6 addresses</li>
 </ul>
 </li>
-<li>NAT64 gateway support
-
-<ul>
-<li>Provide connectivity to IPv4 hosts</li>
-<li>Public IPv4 addresses necessary on NAT64 gateway</li>
-<li>Can be registered as internet service provider to avoid german "Störerhaftung"</li>
-</ul>
-</li>
 <li>End-2-End payload encryption
 
 <ul>
@@ -101,7 +93,7 @@
 <ul>
 <li>CGEID/RSA public key tupel for authentication</li>
 <li>Point-2-Point IPv6MESH neighbours</li>
-<li>IPv4/IPv6 addresses</li>
+<li>Public IPv4/IPv6 addresses</li>
 <li>Alternate CGEIDs (load-balancing, redundancy)</li>
 <li>NAT64 support</li>
 <li>Geographic position
@@ -114,27 +106,62 @@
 <li>Reverse DNS</li>
 </ul>
 </li>
-<li>Replaces BGP, STUN and LISP map-servers/resolvers</li>
-<li>Survives (global) BGP and/or DNS blackout</li>
+<li>Replaces and survives (global) blackout of
+
+<ul>
+<li>BGP</li>
+<li>STUN servers</li>
+<li>LISP map-servers</li>
+<li>LISP map-resolvers</li>
+<li>CGEID zone reverse DNS name servers</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>Compatibility with IPv6 LANs
 
 <ul>
-<li>CGEID creation/authorisation and payload encryption on IPv6MESH router</li>
-<li>CGEID provisioning for conventional IPv6 devices via DHCPv6</li>
+<li>CGEID creation/authorisation/payload encryption on IPv6MESH default gateway</li>
+<li>CGEID provisioning of conventional IPv6 devices via DHCPv6</li>
 </ul>
 </li>
-<li>Compatibility with BGP-routed Internet
+<li>Compatibility with BGP-routed internet
 
 <ul>
-<li>All IPv6MESH nodes with IPv6 connectivity are ingress/egress border routers</li>
-<li>Ingress routing via Anycast addresses
+<li>IPv6 ingress routing via anycast address
 
 <ul>
-<li>IPv6: XXXX:XXXX::0/32    -&gt; XXXX:XXXX::1/128 -&gt; IPv6 addresses of IPv6MESH nodes</li>
-<li>IPv4: XXX.XXX.XXX.XXX/32 -&gt;                     IPv4 addresses of IPv6MESH nodes</li>
+<li>BGP: &lt;CGEID prefix&gt;::0/32 -&gt; &lt;CGEID prefix&gt;::1/128 -&gt; IPv6 addresses of all reliable IPv6MESH nodes</li>
+</ul>
+</li>
+<li>All IPv6MESH nodes with IPv6 connectivity are egress border routers</li>
+<li>IPv4 anycast address
+
+<ul>
+<li>BGP: XXX.XXX.XXX.XXX/32 -&gt; IPv4 addresses of all reliable IPv6MESH nodes</li>
+</ul>
+</li>
 <li>Any BGP operator can scan the D1HT and publish BGP routes via e.g. Quagga extension</li>
+<li>NAT64 gateway support
+
+<ul>
+<li>Provides connectivity to IPv4 hosts</li>
+<li>Public IPv4 addresses necessary on NAT64 gateway</li>
+<li>Can be registered as internet service provider to avoid german "Störerhaftung"</li>
+</ul>
+</li>
+<li>Reverse DNS of CGEID prefix
+
+<ul>
+<li>All nodes with IPv4/IPv6 connectivity are authoritative anycast nameservers</li>
+<li>UDP only</li>
+<li>DNS server glue records
+
+<ul>
+<li>IPv6: 1::&lt;CGEID prefix&gt;.ip6.arpa. 86400 NS &lt;CGEID prefix&gt;::1/128</li>
+<li>IPv4: 1::&lt;CGEID prefix&gt;.ip6.arpa. 86400 NS XXX.XXX.XXX.XXX/32</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -143,7 +170,8 @@
 
 <ul>
 <li>Connectivity between IPv6MESH clouds/isolated nodes</li>
-<li>IPv4/IPv6 locators</li>
+<li>IPv4/IPv6 RLOCS</li>
+<li>CGEID -&gt; RLOC mapping via D1HT</li>
 </ul>
 </li>
 <li>Implementation of onion routing depends on performance</li>
