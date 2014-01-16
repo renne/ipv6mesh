@@ -1,7 +1,7 @@
 IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6mesh.eu&title=IPv6MESH&language=C99&tags=github&category=software"><img src="http://api.flattr.com/button/flattr-badge-large.png" height="24em" width="16%"/></a>
 ========
 
-**IPv6MESH** will be a mesh network extension for the Internet Protocol 6 (OSI Layer 3). Every node generates IPv6 addresses ad-hoc and connects to it's neighbour nodes which allows to deploy large number of nodes automagically.
+**IPv6MESH** is a community project founded on 01/01/2014 by Rene Bartsch to develop and standardize a mesh network extension for the Internet Protocol 6 (OSI Layer 3). Every IPv6MESH node will generate it's cryptographically secured IPv6 addresses and connections to neighbour nodes ad-hoc which allows to deploy a large number of nodes in a IPv6MESH cloud automagically.
 
 **IPv6MESH** can be used to set up emergency communication networks, vehicle-2-vehicle communication (car-2-car, ship-2-ship, satellite-2-satellite), can close gaps in networks by e.g. integrating nodes into reflector posts, streetlights, trees, moored buoys or balloons, geostationary satellites or just serve as a community network.
 
@@ -86,15 +86,13 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
 * **No support** for *Global No Such Agency Backup Service* **;-)** 
 * Hardware/OS-independent
 * ***GPLv2 license*** (Flattr button/Bitcoin address must not be manipulated)
-* Coding conventions: https://github.com/renne/ipv6mesh/wiki/Coding-conventions
-* Feature requests and bugs: https://github.com/renne/ipv6mesh/issues
-* Wiki: https://github.com/renne/ipv6mesh/wiki
 
 ##**Contact**
 Email: webmaster *AT* ipv6mesh.eu
 
 ##**Contribute**
-* You can ***support project IPv6MESH*** (hardware, internet connectivity, domains, administrative costs, ...) via Flattr by starring on GitHub
-* Fork, write code and make a pull request
-* Test and register bugs at https://github.com/renne/ipv6mesh/issues
+* ***Support project IPv6MESH*** (hardware, internet connectivity, domains, administrative costs, ...) via Flattr by starring on GitHub
+* Test, register bugs or leave a feature request or proposal at https://github.com/renne/ipv6mesh/issues
 * Contribute to the Wiki at https://github.com/renne/ipv6mesh/wiki
+* Fork, write code and make a pull request 
+  * Coding conventions: https://github.com/renne/ipv6mesh/wiki/Coding-conventions
