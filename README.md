@@ -1,7 +1,7 @@
 IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6mesh.eu&title=IPv6MESH&language=C99&tags=github&category=software"><img src="http://api.flattr.com/button/flattr-badge-large.png" height="24em" width="16%"/></a>
 ========
 
-**IPv6MESH** is a community project founded on 01/01/2014 by Rene Bartsch to develop and standardize a mesh network extension for the Internet Protocol 6 (OSI Layer 3). Every IPv6MESH node will generate it's cryptographically secured IPv6 addresses and connections to neighbour nodes ad-hoc which allows to deploy a large number of nodes in a IPv6MESH cloud automagically.
+**IPv6MESH** is a community project founded on 01/01/2014 by Rene Bartsch to develop and standardize a mesh network extension for the Internet Protocol 6 (OSI Layer 3). Every IPv6MESH node will generate it's cryptographically secured IPv6 addresses (CGEIDs) and connections to neighbour nodes ad-hoc which allows to deploy a large number of nodes in a IPv6MESH cloud automagically.
 
 **IPv6MESH** can be used to set up emergency communication networks, vehicle-2-vehicle communication (car-2-car, ship-2-ship, satellite-2-satellite), can close gaps in networks by e.g. integrating nodes into reflector posts, streetlights, trees, moored buoys or balloons, geostationary satellites or just serve as a community network.
 
@@ -13,21 +13,21 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
   * 96-bit SHA-2 hash of RSA public key as interface identifier
   * Compatibel with 128 bit IPv6-addresses
   * RSA based authentication
-  * **Decentralized ad-hoc generation**
+  * *Decentralized ad-hoc generation*
   * Import/export/backup (CGEID, public/private key) via PKCS12 files named "&lt;CGEID&gt;.p12"
   * CGEID can be exchanged between users via QR code, NFC, VCards, etc.
-  * IPv6MESH router operators don't have to provide any public IPv6 addresses
+  * IPv6MESH router operators don't have to provide any public IPv6 addresses to users
 * End-2-End payload encryption
   * Exchange of random symmetric stream cipher key by asymmetric RSA key pair
   * AES256 stream cipher
   * Perfect Forward Secrecy
-* D1HT for distributed information about hosts
-  * UDP transport
-  * Bootstrapping
-    * IPv6MESH nodes known via Neighbour Discovery Protocol
-    * IPv4/IPv6 anycast address
+* Distributed HashTable for host/node/routing information
   * CGEID-based index (prevents Sybil attacks)
   * RSA-signed records (prevents Spartacus attacks)
+  * UDP transport 
+  * Bootstrapping
+    * CGEIDs known via Neighbour Discovery Protocol
+    * IPv4/IPv6 anycast address
   * Record types of a IPv6MESH node
     * CGEID/RSA public key tupel for authentication
     * Point-2-Point IPv6MESH neighbours
@@ -37,13 +37,15 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
     * Geographic position
       * Distributed network coverage map
       * Positioning of laser communication terminals
-    * Reverse DNS
+    * Reverse Domain Name System records (PTR)
   * Replaces and survives (global) blackout of
     * BGP
     * STUN servers
     * LISP map-servers
     * LISP map-resolvers
-    * CGEID zone reverse DNS name servers
+    * CGEID zone reverse DNS servers
+* Routing algorithm
+  * ??? (evaluate Hyperboria)
 * Compatibility with IPv6 LANs
   * CGEID creation/authorisation/payload encryption on IPv6MESH default gateway
   * CGEID provisioning of conventional IPv6 devices via DHCPv6
@@ -66,8 +68,9 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
       * IPv4: 1::&lt;CGEID prefix&gt;.ip6.arpa. 86400 NS XXX.XXX.XXX.XXX/32
 * LISP-tunneling
   * Connectivity between IPv6MESH clouds/isolated nodes
-  * IPv4/IPv6 RLOCS
-  * CGEID -> RLOC mapping via D1HT
+  * CGEIDs are LISP EIDs
+  * IPv4/IPv6 addresses are RLOCs
+  * CGEID (EID) -> RLOC mapping via DHT
 * Implementation of onion routing depends on performance
 * Physical connectivity
   * Wires and radio links can be DIY-installed between homes
