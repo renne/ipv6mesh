@@ -7,21 +7,21 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
 
 
 ##**Features:**
-* Security based on **4096-bit RSA** key-pairs
-* **C**ryptographically **G**enerated **E**ndpoint **I**dentifiers **(CGEIDs)**
+* **Security based on *4096-bit RSA* key-pairs**
+* ***C*ryptographically *G*enerated *E*ndpoint *I*dentifiers (*CGEIDs*)**
   * 32-bit IPv6 IANA prefix (XXXX:XXXX::0/32)
   * 96-bit SHA-2 hash of RSA public key as interface identifier
   * Compatibel with 128 bit IPv6-addresses
   * RSA based authentication
-  * *Decentralized ad-hoc generation*
+  * **Decentralized ad-hoc generation**
   * Import/export/backup (CGEID, public/private key) via PKCS12 files named "&lt;CGEID&gt;.p12"
   * CGEID can be exchanged between users via QR code, NFC, VCards, etc.
   * IPv6MESH router operators don't have to provide any public IPv6 addresses to users
-* End-2-End payload encryption
+* **End-2-End payload encryption**
   * Exchange of random symmetric stream cipher key by asymmetric RSA key pair
   * AES256 stream cipher
   * Perfect Forward Secrecy
-* Distributed HashTable for host/node/routing information
+* **Distributed HashTable for host/node/routing information**
   * CGEID-based index (prevents Sybil attacks)
   * RSA-signed records (prevents Spartacus attacks)
   * UDP transport 
@@ -44,35 +44,36 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
     * LISP map-servers
     * LISP map-resolvers
     * CGEID zone reverse DNS servers
-* Routing algorithm
+* **Routing algorithm**
   * ??? (evaluate Hyperboria)
-* Compatibility with IPv6 LANs
+* **Compatibility with IPv6 LANs**
   * CGEID creation/authorisation/payload encryption on IPv6MESH default gateway
   * CGEID provisioning of conventional IPv6 devices via DHCPv6
-* Compatibility with BGP-routed internet
+* **Compatibility with BGP-routed internet**
   * IPv6 ingress routing via anycast address
     * BGP: &lt;CGEID prefix&gt;::0/32 -> &lt;CGEID prefix&gt;::1/128 -> IPv6 addresses of all reliable IPv6MESH nodes
   * All IPv6MESH nodes with IPv6 connectivity are egress border routers
   * IPv4 anycast address
     * BGP: XXX.XXX.XXX.XXX/32 -> IPv4 addresses of all reliable IPv6MESH nodes
   * Any BGP operator can scan the D1HT and publish BGP routes via e.g. Quagga extension
-  * NAT64 gateway support
+  * Optional NAT64 gateway support
     * Provides connectivity to IPv4 hosts
     * Public IPv4 addresses necessary on NAT64 gateway
     * Can be registered as internet service provider to avoid german "Störerhaftung"
   * Reverse DNS of CGEID prefix
     * All nodes with IPv4/IPv6 connectivity are authoritative anycast nameservers
     * UDP only
-    * DNS server glue records
-      * IPv6: 1::&lt;CGEID prefix&gt;.ip6.arpa. 86400 NS &lt;CGEID prefix&gt;::1/128
-      * IPv4: 1::&lt;CGEID prefix&gt;.ip6.arpa. 86400 NS XXX.XXX.XXX.XXX/32
-* LISP-tunneling
+    * Rerverse DNS glue records
+      * IPv6: &lt;reversed CGEID prefix&gt;.ip6.arpa. 86400 NS &lt;IPv6 anycast IP&gt;
+      * IPv4: &lt;reversed CGEID prefix&gt;.ip6.arpa. 86400 NS &lt;IPv4 anycast IP&gt;
+* **LISP-tunneling**
   * Connectivity between IPv6MESH clouds/isolated nodes
   * CGEIDs are LISP EIDs
-  * IPv4/IPv6 addresses are RLOCs
-  * CGEID (EID) -> RLOC mapping via DHT
-* Implementation of onion routing depends on performance
-* Physical connectivity
+  * IPv4/IPv6 addresses are LISP RLOCs
+  * CGEID -> RLOC mapping via DHT
+* **Onion routing**
+  * Implementation depends on performance
+* **Physical connectivity**
   * Wires and radio links can be DIY-installed between homes
   * Wired communication
     * IEEE 802.3 Clause 38 (1000Base-SX/LX) preferred
@@ -85,13 +86,12 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
       * 2-dimensional beamforming
     * Unencrypted (B)SSID "IETFRFC&lt;rfc number&gt;" ("ipv6mesh.eu" until formal release of RFC)
   * Laser Communication Terminals
-* Filing of IETF Internet Draft planned when IPv6MESH scales well
+* **Filing of IETF Internet Draft planned when IPv6MESH scales well**
 * **No support** for *Global No Such Agency Backup Service* **;-)** 
-* Hardware/OS-independent
 * ***GPLv2 license*** (Flattr button/Bitcoin address must not be manipulated)
 
 ##**Contact**
-Email: webmaster *AT* ipv6mesh.eu
+Email: **webmaster** AT **ipv6mesh.eu**
 
 ##**Contribute**
 * ***Support project IPv6MESH*** (hardware, internet connectivity, domains, administrative costs, ...) via Flattr by starring on GitHub
