@@ -43,18 +43,20 @@
 <a name="ipv6mesh-" class="anchor" href="#ipv6mesh-"><span class="octicon octicon-link"></span></a>IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&amp;url=http://ipv6mesh.eu&amp;title=IPv6MESH&amp;language=C99&amp;tags=github&amp;category=software"><img src="http://api.flattr.com/button/flattr-badge-large.png" height="24em" width="16%"></a>
 </h1>
 
-<p><strong>IPv6MESH</strong> is a community project founded on 01/01/2014 by Rene Bartsch to develop and standardize a mesh network extension for the Internet Protocol 6 (OSI Layer 3). Every IPv6MESH node will generate it's cryptographically secured IPv6 addresses and connections to neighbour nodes ad-hoc which allows to deploy a large number of nodes in a IPv6MESH cloud automagically.</p>
+<p><strong>IPv6MESH</strong> is a community project founded on 01/01/2014 by Rene Bartsch to develop and standardize a mesh network extension for the Internet Protocol 6 (OSI Layer 3). Every IPv6MESH node will generate it's cryptographically secured IPv6 addresses (CGEIDs) and connections to neighbour nodes ad-hoc which allows to deploy a large number of nodes in a IPv6MESH cloud automagically.</p>
 
 <p><strong>IPv6MESH</strong> can be used to set up emergency communication networks, vehicle-2-vehicle communication (car-2-car, ship-2-ship, satellite-2-satellite), can close gaps in networks by e.g. integrating nodes into reflector posts, streetlights, trees, moored buoys or balloons, geostationary satellites or just serve as a community network.</p>
 
 <h2>
-<a name="features" class="anchor" href="#features"><span class="octicon octicon-link"></span></a><strong>Features:</strong>
+<a name="planned-features" class="anchor" href="#planned-features"><span class="octicon octicon-link"></span></a><strong>Planned features:</strong>
 </h2>
 
 <ul>
-<li>Security based on <strong>4096-bit RSA</strong> key-pairs</li>
+<li><strong>Proof-of-concept implementation based on TUN device</strong></li>
+<li><strong>Filing of IETF Internet Draft</strong></li>
+<li><strong>Security based on <em>4096-bit RSA</em> key-pairs</strong></li>
 <li>
-<strong>C</strong>ryptographically <strong>G</strong>enerated <strong>E</strong>ndpoint <strong>I</strong>dentifiers <strong>(CGEIDs)</strong>
+<strong><em>C</em>ryptographically <em>G</em>enerated <em>E</em>ndpoint <em>ID</em>entifiers (<em>CGEIDs</em>)</strong>
 
 <ul>
 <li>32-bit IPv6 IANA prefix (XXXX:XXXX::0/32)</li>
@@ -64,9 +66,34 @@
 <li><strong>Decentralized ad-hoc generation</strong></li>
 <li>Import/export/backup (CGEID, public/private key) via PKCS12 files named "&lt;CGEID&gt;.p12"</li>
 <li>CGEID can be exchanged between users via QR code, NFC, VCards, etc.</li>
-<li>IPv6MESH router operators don't have to provide any public IPv6 addresses</li>
+<li>IPv6MESH router operators don't have to provide any public IPv6 addresses to users/hosts</li>
 </ul>
 </li>
+<li>
+<strong>Privacy</strong>
+
+<ul>
+<li>Pseudonimyzed IP addresses (CGEIDs)
+
+<ul>
+<li>static CGEIDs for incoming connections
+
+<ul>
+<li>Preferred Lifetime:          1 second  (some OS do not accept a zero value)</li>
+<li>Valid Lifetime:     4294967295 seconds (infinite)</li>
+</ul>
+</li>
+<li>temporary CGEIDs for outgoing connections
+
+<ul>
+<li>Preferred Lifetime:      86700 seconds (24h + 5 minutes overlapping)</li>
+<li>Valid Lifetime:         172800 seconds (48h)</li>
+<li>Exchange at 00:00 o'clock UTC</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Onion routing depends on performance</li>
 <li>End-2-End payload encryption
 
 <ul>
@@ -75,19 +102,22 @@
 <li>Perfect Forward Secrecy</li>
 </ul>
 </li>
-<li>D1HT for distributed information about hosts
+</ul>
+</li>
+<li>
+<strong>Distributed HashTable for host/node/routing information</strong>
 
 <ul>
-<li>UDP transport</li>
+<li>CGEID-based index (prevents Sybil attacks)</li>
+<li>RSA-signed records (prevents Spartacus attacks)</li>
+<li>UDP transport </li>
 <li>Bootstrapping
 
 <ul>
-<li>IPv6MESH nodes known via Neighbour Discovery Protocol</li>
+<li>CGEIDs known via Neighbour Discovery Protocol</li>
 <li>IPv4/IPv6 anycast address</li>
 </ul>
 </li>
-<li>CGEID-based index (prevents Sybil attacks)</li>
-<li>RSA-signed records (prevents Spartacus attacks)</li>
 <li>Record types of a IPv6MESH node
 
 <ul>
@@ -103,7 +133,7 @@
 <li>Positioning of laser communication terminals</li>
 </ul>
 </li>
-<li>Reverse DNS</li>
+<li>Reverse Domain Name System records (PTR)</li>
 </ul>
 </li>
 <li>Replaces and survives (global) blackout of
@@ -113,19 +143,28 @@
 <li>STUN servers</li>
 <li>LISP map-servers</li>
 <li>LISP map-resolvers</li>
-<li>CGEID zone reverse DNS name servers</li>
+<li>CGEID zone reverse DNS servers</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>Compatibility with IPv6 LANs
+<li>
+<strong>Routing algorithm</strong>
+
+<ul>
+<li>??? (evaluate Hyperboria)</li>
+</ul>
+</li>
+<li>
+<strong>Compatibility with IPv6 LANs</strong>
 
 <ul>
 <li>CGEID creation/authorisation/payload encryption on IPv6MESH default gateway</li>
 <li>CGEID provisioning of conventional IPv6 devices via DHCPv6</li>
 </ul>
 </li>
-<li>Compatibility with BGP-routed internet
+<li>
+<strong>Compatibility with BGP-routed internet</strong>
 
 <ul>
 <li>IPv6 ingress routing via anycast address
@@ -142,7 +181,7 @@
 </ul>
 </li>
 <li>Any BGP operator can scan the D1HT and publish BGP routes via e.g. Quagga extension</li>
-<li>NAT64 gateway support
+<li>Optional NAT64 gateway support
 
 <ul>
 <li>Provides connectivity to IPv4 hosts</li>
@@ -155,27 +194,29 @@
 <ul>
 <li>All nodes with IPv4/IPv6 connectivity are authoritative anycast nameservers</li>
 <li>UDP only</li>
-<li>DNS server glue records
+<li>Rerverse DNS glue records
 
 <ul>
-<li>IPv6: 1::&lt;CGEID prefix&gt;.ip6.arpa. 86400 NS &lt;CGEID prefix&gt;::1/128</li>
-<li>IPv4: 1::&lt;CGEID prefix&gt;.ip6.arpa. 86400 NS XXX.XXX.XXX.XXX/32</li>
+<li>IPv6: &lt;reversed CGEID prefix&gt;.ip6.arpa. 86400 NS &lt;IPv6 anycast IP&gt;</li>
+<li>IPv4: &lt;reversed CGEID prefix&gt;.ip6.arpa. 86400 NS &lt;IPv4 anycast IP&gt;</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li>LISP-tunneling
+<li>
+<strong>LISP-tunneling</strong>
 
 <ul>
 <li>Connectivity between IPv6MESH clouds/isolated nodes</li>
-<li>IPv4/IPv6 RLOCS</li>
-<li>CGEID -&gt; RLOC mapping via D1HT</li>
+<li>CGEIDs are LISP EIDs</li>
+<li>IPv4/IPv6 addresses are LISP RLOCs</li>
+<li>CGEID -&gt; RLOC mapping via DHT</li>
 </ul>
 </li>
-<li>Implementation of onion routing depends on performance</li>
-<li>Physical connectivity
+<li>
+<strong>Physical connectivity</strong>
 
 <ul>
 <li>Wires and radio links can be DIY-installed between homes</li>
@@ -204,17 +245,15 @@
 <li>Laser Communication Terminals</li>
 </ul>
 </li>
-<li>Filing of IETF Internet Draft planned when IPv6MESH scales well</li>
 <li>
 <strong>No support</strong> for <em>Global No Such Agency Backup Service</em> <strong>;-)</strong> </li>
-<li>Hardware/OS-independent</li>
 <li>
 <strong><em>GPLv2 license</em></strong> (Flattr button/Bitcoin address must not be manipulated)</li>
 </ul><h2>
 <a name="contact" class="anchor" href="#contact"><span class="octicon octicon-link"></span></a><strong>Contact</strong>
 </h2>
 
-<p>Email: webmaster <em>AT</em> ipv6mesh.eu</p>
+<p>Email: <strong>webmaster</strong> AT <strong>ipv6mesh.eu</strong></p>
 
 <h2>
 <a name="contribute" class="anchor" href="#contribute"><span class="octicon octicon-link"></span></a><strong>Contribute</strong>
@@ -222,7 +261,7 @@
 
 <ul>
 <li>
-<strong><em>Support project IPv6MESH</em></strong> (hardware, internet connectivity, domains, administrative costs, ...) via Flattr by starring on GitHub</li>
+<strong><em>Support project IPv6MESH</em></strong> (hardware, internet connectivity, domains, administrative costs, ...) via Flattr by starring on GitHub or via Bitcoin address 1FqEeuW54veJzcuyKbEUYrqjTNsbTYVLKr</li>
 <li>Test, register bugs or leave a feature request or proposal at <a href="https://github.com/renne/ipv6mesh/issues">https://github.com/renne/ipv6mesh/issues</a>
 </li>
 <li>Contribute to the Wiki at <a href="https://github.com/renne/ipv6mesh/wiki">https://github.com/renne/ipv6mesh/wiki</a>
