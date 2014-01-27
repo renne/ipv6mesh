@@ -6,9 +6,11 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
 **IPv6MESH** can be used to set up emergency communication networks, vehicle-2-vehicle communication (car-2-car, ship-2-ship, satellite-2-satellite), can close gaps in networks by e.g. integrating nodes into reflector posts, streetlights, trees, moored buoys or balloons, geostationary satellites or just serve as a community network.
 
 
-##**Features:**
+##**Planned features:**
+* **Proof-of-concept implementation based on TUN device**
+* **Filing of IETF Internet Draft**
 * **Security based on *4096-bit RSA* key-pairs**
-* ***C*ryptographically *G*enerated *E*ndpoint *I*dentifiers (*CGEIDs*)**
+* ***C*ryptographically *G*enerated *E*ndpoint *ID*entifiers (*CGEIDs*)**
   * 32-bit IPv6 IANA prefix (XXXX:XXXX::0/32)
   * 96-bit SHA-2 hash of RSA public key as interface identifier
   * Compatibel with 128 bit IPv6-addresses
@@ -16,11 +18,21 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
   * **Decentralized ad-hoc generation**
   * Import/export/backup (CGEID, public/private key) via PKCS12 files named "&lt;CGEID&gt;.p12"
   * CGEID can be exchanged between users via QR code, NFC, VCards, etc.
-  * IPv6MESH router operators don't have to provide any public IPv6 addresses to users
-* **End-2-End payload encryption**
-  * Exchange of random symmetric stream cipher key by asymmetric RSA key pair
-  * AES256 stream cipher
-  * Perfect Forward Secrecy
+  * IPv6MESH router operators don't have to provide any public IPv6 addresses to users/hosts
+* **Privacy**
+  * Pseudonimyzed IP addresses (CGEIDs)
+    * static CGEIDs for incoming connections
+      * Preferred Lifetime:          1 second  (some OS do not accept a zero value)
+      * Valid Lifetime:     4294967295 seconds (infinite)
+    * temporary CGEIDs for outgoing connections
+      * Preferred Lifetime:      86700 seconds (24h + 5 minutes overlapping)
+      * Valid Lifetime:         172800 seconds (48h)
+      * Exchange at 00:00 o'clock UTC
+  * Onion routing depends on performance
+  * End-2-End payload encryption
+    * Exchange of random symmetric stream cipher key by asymmetric RSA key pair
+    * AES256 stream cipher
+    * Perfect Forward Secrecy
 * **Distributed HashTable for host/node/routing information**
   * CGEID-based index (prevents Sybil attacks)
   * RSA-signed records (prevents Spartacus attacks)
@@ -71,8 +83,6 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
   * CGEIDs are LISP EIDs
   * IPv4/IPv6 addresses are LISP RLOCs
   * CGEID -> RLOC mapping via DHT
-* **Onion routing**
-  * Implementation depends on performance
 * **Physical connectivity**
   * Wires and radio links can be DIY-installed between homes
   * Wired communication
@@ -86,7 +96,6 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
       * 2-dimensional beamforming
     * Unencrypted (B)SSID "IETFRFC&lt;rfc number&gt;" ("ipv6mesh.eu" until formal release of RFC)
   * Laser Communication Terminals
-* **Filing of IETF Internet Draft planned when IPv6MESH scales well**
 * **No support** for *Global No Such Agency Backup Service* **;-)** 
 * ***GPLv2 license*** (Flattr button/Bitcoin address must not be manipulated)
 
@@ -94,7 +103,7 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
 Email: **webmaster** AT **ipv6mesh.eu**
 
 ##**Contribute**
-* ***Support project IPv6MESH*** (hardware, internet connectivity, domains, administrative costs, ...) via Flattr by starring on GitHub
+* ***Support project IPv6MESH*** (hardware, internet connectivity, domains, administrative costs, ...) via Flattr by starring on GitHub or via Bitcoin address 1FqEeuW54veJzcuyKbEUYrqjTNsbTYVLKr
 * Test, register bugs or leave a feature request or proposal at https://github.com/renne/ipv6mesh/issues
 * Contribute to the Wiki at https://github.com/renne/ipv6mesh/wiki
 * Fork, write code and make a pull request 
