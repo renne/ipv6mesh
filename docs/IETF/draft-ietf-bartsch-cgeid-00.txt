@@ -1,0 +1,336 @@
+ 
+
+
+
+INTERNET-DRAFT                                              Rene Bartsch
+Intended Status: Proposed Standard                    Internet Community
+Expires: <Expiry Date>                                      <Issue Date>
+
+
+            Cryptographically Generated Endpoint IDentifiers
+                   for IPv6 Overlay Networks (CGEIDs)
+                      draft-ietf-bartsch-cgeid-00
+
+
+Abstract
+
+   <Abstract Text>
+
+
+Status of this Memo
+
+   This Internet-Draft is submitted to IETF in full conformance with the
+   provisions of BCP 78 and BCP 79.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF), its areas, and its working groups.  Note that
+   other groups may also distribute working documents as
+   Internet-Drafts.
+
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as "work in progress."
+
+   The list of current Internet-Drafts can be accessed at
+   http://www.ietf.org/1id-abstracts.html
+
+   The list of Internet-Draft Shadow Directories can be accessed at
+   http://www.ietf.org/shadow.html
+
+
+Copyright and License Notice
+
+   Copyright (c) <year> IETF Trust and the persons identified as the
+   document authors. All rights reserved.
+
+   This document is subject to BCP 78 and the IETF Trust's Legal
+   Provisions Relating to IETF Documents
+   (http://trustee.ietf.org/license-info) in effect on the date of
+   publication of this document. Please review these documents
+   carefully, as they describe your rights and restrictions with respect
+   to this document. Code Components extracted from this document must
+ 
+
+
+Rene Bartsch             Expires <Expiry Date>                  [Page 1]
+
+INTERNET DRAFT                   CGEIDs                     <Issue Date>
+
+
+   include Simplified BSD License text as described in Section 4.e of
+   the Trust Legal Provisions and are provided without warranty as
+   described in the Simplified BSD License.
+
+
+
+Table of Contents
+
+   1  Introduction  . . . . . . . . . . . . . . . . . . . . . . . . .  3
+     1.1  Terminology . . . . . . . . . . . . . . . . . . . . . . . .  3
+   2.  Title  . . . . . . . . . . . . . . . . . . . . . . . . . . . .  3
+   3  Security Considerations . . . . . . . . . . . . . . . . . . . .  4
+   4  IANA Considerations . . . . . . . . . . . . . . . . . . . . . .  4
+   5  References  . . . . . . . . . . . . . . . . . . . . . . . . . .  4
+     5.1  Normative References  . . . . . . . . . . . . . . . . . . .  5
+     5.2  Informative References  . . . . . . . . . . . . . . . . . .  5
+   Authors' Addresses . . . . . . . . . . . . . . . . . . . . . . . .  5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+Rene Bartsch             Expires <Expiry Date>                  [Page 2]
+
+INTERNET DRAFT                   CGEIDs                     <Issue Date>
+
+
+1  Introduction
+
+   <Introduction Text>
+
+1.1  Terminology
+
+   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+   "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
+   document are to be interpreted as described in RFC 2119 [RFC2119].
+
+
+2.  Title
+
+   <Document text>
+
+      Definitions and code {
+        line 1
+        line 2
+      }
+
+
+   Special characters examples:
+
+   The characters  , , , 
+   However, the characters \0, \&, \%, \" are displayed.
+
+   .ti 0  is displayed in text instead of used as a directive. 
+   .\"  is displayed in document instead of being treated as a comment
+
+   C:\dir\subdir\file.ext  Shows inclusion of backslash "\".
+
+   Rationale and Intent
+
+   Public IPv6 address for individuals and Public IPv6 address for
+   embedded devices Unicast and multicast support Global provider-
+   independent IP Roaming Authentication of hosts
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+Rene Bartsch             Expires <Expiry Date>                  [Page 3]
+
+INTERNET DRAFT                   CGEIDs                     <Issue Date>
+
+
+3  Security Considerations
+
+   This document uses cryptographic algorithms and procedures, which can
+   be broken. To ensure security cryptographic algorithms with a known
+   pratically attack MUST NOT be used. As vendors tend to postpone
+   security updates to save costs this document MUST become obsolete and
+   MUST be replaced by an updated document in case there are no secure
+   algorithms allowed by this document left.
+
+   Poisoning attacks on the LISP mapping tables can render the global
+   LISP-system useless. The processing power necessary for creating
+   4096-bit based CGEID/public key/private key triplets reduces the rate
+   and number of real CGEIDs one entity can generate. LISP
+   implementations MUST check the signatures of the mapping records
+   before further processing to avoid CGEID spoofing.
+
+
+4  IANA Considerations
+
+   This document requests a /64 IPv6 prefix for use as global CGEID
+   space from the IANA without a hierarchical allocation outlined in
+   [RFC5226]. This request is summarized in Table 1.
+
+       +----------------------+--------------------------------+
+       | Attribute            | Value                          |
+       +----------------------+--------------------------------+
+       | Address Block        | XXXX:XXXX:XXXX:XXXX:/64 [1][2] |
+       | Name                 | CGEID Space for LISP           |
+       | RFC                  | [This Document]                |
+       | Allocation Date      | November 2013                  |
+       | Termination Date     | False                          |
+       | Source               | True [3]                       |
+       | Destination          | True                           |
+       | Forwardable          | True                           |
+       | Global               | True                           |
+       | Reserved-by-protocol | True [4]                       |
+       +----------------------+--------------------------------+
+
+   [1] XXXX:XXXX:XXXX:XXXX value to be provided by IANA before published
+   as RFC. [2] The IANA is asked to assign a prefix with a highly
+   reduced notation to simplify usage by average users. [3] Can be used
+   as a multicast source as well. [4] To be used as EID space by LISP
+   [RFC6830] enabled devices.
+
+   Table 1: Global EID Space
+
+5  References
+
+ 
+
+
+Rene Bartsch             Expires <Expiry Date>                  [Page 4]
+
+INTERNET DRAFT                   CGEIDs                     <Issue Date>
+
+
+5.1  Normative References
+
+
+5.2  Informative References
+
+
+
+Authors' Addresses
+
+
+   Rene Bartsch
+
+   EMail: ietf@bartschnet.de
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+Rene Bartsch             Expires <Expiry Date>                  [Page 5]
+
+INTERNET DRAFT                   CGEIDs                     <Issue Date>
+
+
+   ToDo
+
+   - CGA signature in mapping database possible/poisoning attacks?
+   - To avoid bloating the BGP tables public PITRs MUST either publish the BGP-route of the CGEID-prefix as one single route or aggregated in a bigger IPv6-prefix.
+   - acknowledgements
+   - DNS PTRs
+   - multicasted Webcam
+   - PITRs MUST support multicast
+   - export function for self-generated RSA-keys
+   - import function for existing RSA-keys
+   - accelerated global IPv6 deployment even without IPv6 support of ISPs
+   - layer-3 ad-hoc MESH networks (ad-hoc CGEID + ad-hoc CGEID-> neighbour-CGEID (RLOC) mapping)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Rene Bartsch             Expires <Expiry Date>                  [Page 6]

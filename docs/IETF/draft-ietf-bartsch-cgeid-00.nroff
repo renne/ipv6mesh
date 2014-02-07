@@ -1,0 +1,233 @@
+.pl 10.0i
+.po 0
+.ll 7.2i
+.lt 7.2i
+.nr LL 7.2i
+.nr LT 7.2i
+.ds LF Rene Bartsch 
+.ds RF FORMFEED[Page %]
+.ds LH INTERNET DRAFT
+.ds RH <Issue Date>
+.ds CH CGEIDs
+.ds CF Expires <Expiry Date>
+.hy 0
+.nh
+.ad l
+.in 0
+
+.nf
+.tl 'INTERNET-DRAFT''Rene Bartsch'
+.tl 'Intended Status: Proposed Standard''Internet Community'
+.tl 'Expires: <Expiry Date>''<Issue Date>'
+.fi
+
+.\" Note. The ".tl" directive is used to generate the leading header 
+.\" in Internet drafts. The information specified after ".tl" provides
+.\" left, center and right components of a line separated by the ' character
+.\" in the following manner:
+.\" 
+.\"  .tl '<left component>'<center component>'<right component>'
+.\"
+.\" Only the left and right components are used in Internet-draft headers
+.\" This and other comments in this template can safely be deleted.
+
+.ce 3
+Cryptographically Generated Endpoint IDentifiers
+for IPv6 Overlay Networks (CGEIDs)
+draft-ietf-bartsch-cgeid-00
+.fi
+.in 3
+
+
+.ti 0
+Abstract
+
+<Abstract Text>
+
+
+.ti 0
+Status of this Memo
+
+This Internet-Draft is submitted to IETF in full conformance with the provisions of BCP\078 and BCP\079.
+
+Internet-Drafts are working documents of the Internet Engineering Task Force (IETF), its areas, and its working groups.  Note that other groups may also distribute working documents as \%Internet-Drafts.
+
+Internet-Drafts are draft documents valid for a maximum of six months and may be updated, replaced, or obsoleted by other documents at any time.  It is inappropriate to use Internet-Drafts as reference material or to cite them other than as "work in progress."
+
+The list of current Internet-Drafts can be accessed at \%http://www.ietf.org/1id-abstracts.html
+
+The list of Internet-Draft Shadow Directories can be accessed at http://www.ietf.org/shadow.html
+
+
+.ti 0
+Copyright and License Notice\" Boilerplate from December 2009
+
+.\" NOTE: Insert current <year> in the following paragraph
+Copyright (c) <year> IETF Trust and the persons identified as the document authors. All rights reserved.
+
+This document is subject to BCP\078 and the IETF Trust's Legal Provisions Relating to IETF Documents \%(http://trustee.ietf.org/license-info) in effect on the date of publication of this document. Please review these documents carefully, as they describe your rights and restrictions with respect to this document. Code Components extracted from this document must include Simplified BSD License text as described in Section\04.e of the Trust Legal Provisions and are provided without warranty as described in the Simplified BSD License.
+
+
+
+.\" \# TD4  -- Set TOC depth by altering this value (TD5 = depth 5)
+.\" \# TOC  -- Beginning of auto updated Table of Contents
+.in 0
+Table of Contents
+
+.nf
+   1  Introduction  . . . . . . . . . . . . . . . . . . . . . . . . .  3
+     1.1  Terminology . . . . . . . . . . . . . . . . . . . . . . . .  3
+   2.  Title  . . . . . . . . . . . . . . . . . . . . . . . . . . . .  3
+   3  Security Considerations . . . . . . . . . . . . . . . . . . . .  4
+   4  IANA Considerations . . . . . . . . . . . . . . . . . . . . . .  4
+   5  References  . . . . . . . . . . . . . . . . . . . . . . . . . .  4
+     5.1  Normative References  . . . . . . . . . . . . . . . . . . .  5
+     5.2  Informative References  . . . . . . . . . . . . . . . . . .  5
+   Authors' Addresses . . . . . . . . . . . . . . . . . . . . . . . .  5
+.fi
+.in 3
+
+.\" \# ETC -- End of auto updated Table of Contents
+
+.bp
+.ti 0
+1  Introduction
+
+<Introduction Text>
+
+.ti 0
+1.1  Terminology
+
+The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in RFC 2119 [RFC2119].
+
+
+.ti 0
+2.  Title
+
+.\" Comment line providing info for the Authors or the RFC Editor
+<Document text>
+
+.in 6
+.nf
+Definitions and code {
+  line 1
+  line 2
+}
+.fi
+.in 3
+
+.\" Directives (e.g .ti and .in) and escape sequences (\, \&, \%, \" and \0) are used to control
+.\" Formatting and are not displayed in the text document.
+
+Special characters examples:
+ 
+The characters \0, \&, \%, \" are not shown in text.
+.\"
+.\" You can display these character sequences in the text document by
+.\" inserting the escape character '\'.
+However, the characters \\0, \\&, \\%, \\" are displayed.
+
+\&.ti 0  is displayed in text instead of used as a directive. 
+.br
+\&.\\"  is displayed in document instead of being treated as a comment
+
+C:\\dir\\subdir\\file.ext  Shows inclusion of backslash "\\".
+
+Rationale and Intent
+
+Public IPv6 address for individuals and 
+Public IPv6 address for embedded devices
+Unicast and multicast support
+Global provider-independent IP Roaming
+Authentication of hosts
+
+
+
+.bp
+.ti 0
+3  Security Considerations
+
+This document uses cryptographic algorithms and procedures, which can be broken. To ensure security cryptographic algorithms with a known pratically attack MUST NOT be used. As vendors tend to postpone security updates to save costs this document MUST become obsolete and MUST be replaced by an updated document in case there are no secure algorithms allowed by this document left.
+
+Poisoning attacks on the LISP mapping tables can render the global LISP-system useless. The processing power necessary for creating 4096-bit based CGEID/public key/private key triplets reduces the rate and number of real CGEIDs one entity can generate. LISP implementations MUST check the signatures of the mapping records before further processing to avoid CGEID spoofing.
+
+
+.ti 0
+4  IANA Considerations
+
+This document requests a /64 IPv6 prefix for use as global CGEID space from the IANA without a hierarchical allocation outlined in [RFC5226]. This request is summarized in Table 1.
+
+.ne 14
+.ce 14
++----------------------+--------------------------------+
+| Attribute            | Value                          |
++----------------------+--------------------------------+
+| Address Block        | XXXX:XXXX:XXXX:XXXX:/64 [1][2] |
+| Name                 | CGEID Space for LISP           |
+| RFC                  | [This Document]                |
+| Allocation Date      | November 2013                  |
+| Termination Date     | False                          |
+| Source               | True [3]                       |
+| Destination          | True                           |
+| Forwardable          | True                           |
+| Global               | True                           |
+| Reserved-by-protocol | True [4]                       |
++----------------------+--------------------------------+
+
+[1] XXXX:XXXX:XXXX:XXXX value to be provided by IANA before published as RFC.
+[2] The IANA is asked to assign a prefix with a highly reduced notation to simplify usage by average users.
+[3] Can be used as a multicast source as well.
+[4] To be used as EID space by LISP [RFC6830] enabled devices.
+
+Table 1: Global EID Space
+
+.ti 0
+5  References
+
+.ti 0 
+5.1  Normative References
+
+.in 14
+.\" \# REF  -- Managed reference list. Syntax: [RFC]nnnn[;Label], ... ,[RFC]nnnn[;Label]
+.\" \# 2119;KEYWORDS, 1776, RFC1925;TRUTHS
+.\" \# ERF -- End of managed reference list
+.\" ----------------------------------------
+.\" The reference list can be changed at any time by altering the RFC list in the line below the .\" \# REF directive
+.\" In order to execute any change, click on the 'Update All' button or select "Update 'Table of Contents' and References"
+.\" from the "Edit" menu or press <F3>.
+.\" NOTE: Managed reference list requires NroffEdit version 1.40 or later.
+
+.ti 0
+5.2  Informative References
+
+.in 14
+.\" \# REF  -- Managed reference list. Syntax: [RFC]nnnn[;Label], ... ,[RFC]nnnn[;Label]
+.\" \# 3514;EVILBIT, 5513, 5514
+.\" \# ERF -- End of managed reference list
+.in 3
+
+
+.ti 0
+Authors' Addresses
+
+.sp
+.nf
+Rene Bartsch
+
+EMail: ietf@bartschnet.de
+.sp
+.bp
+ToDo
+.sp
+- CGA signature in mapping database possible/poisoning attacks?
+- To avoid bloating the BGP tables public PITRs MUST either publish the BGP-route of the CGEID-prefix as one single route or aggregated in a bigger IPv6-prefix.
+- acknowledgements
+- DNS PTRs
+- multicasted Webcam
+- PITRs MUST support multicast
+- export function for self-generated RSA-keys
+- import function for existing RSA-keys
+- accelerated global IPv6 deployment even without IPv6 support of ISPs
+- layer-3 ad-hoc MESH networks (ad-hoc CGEID + ad-hoc CGEID-> neighbour-CGEID (RLOC) mapping)
+.fi
+
