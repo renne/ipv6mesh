@@ -99,12 +99,15 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
 * **No support** for *Global No Such Agency Backup Service* **;-)** 
 * ***GPLv2 license*** (Flattr button/Bitcoin address must not be manipulated)
 
-##**Contact**
-Email: **webmaster** AT **ipv6mesh.eu**
-
 ##**Contribute**
 * ***Support project IPv6MESH*** (hardware, internet connectivity, domains, administrative costs, ...) via Flattr by starring on GitHub or via Bitcoin address 1FqEeuW54veJzcuyKbEUYrqjTNsbTYVLKr
 * Test, register bugs or leave a feature request or proposal at https://github.com/renne/ipv6mesh/issues
 * Contribute to the Wiki at https://github.com/renne/ipv6mesh/wiki
 * Fork, write code and make a pull request 
   * Coding conventions: https://github.com/renne/ipv6mesh/wiki/Coding-conventions
+
+##**Copyright**
+© 2014 René Bartsch, B. Sc. Informatics
+
+##**Contact**
+Email: **webmaster** AT **ipv6mesh.eu**
