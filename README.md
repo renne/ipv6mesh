@@ -84,7 +84,15 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
   * IPv4/IPv6 addresses are LISP RLOCs
   * CGEID -> RLOC mapping via DHT
 * **Physical connectivity**
-  * Wires and radio links can be DIY-installed between homes
+  * Wired links, radio links and FSO links can be DIY-installed between homes
+  * [Free-space optical communication](https://en.wikipedia.org/wiki/Free-space_optical_communication)
+    * Class 1/1M
+    * High speed (100 or 1000 MBit/s)
+    * Bug-proof
+    * Electromagnetic immunity
+    * No electromagnetic interferences on other devices
+    * No license or registration necessary
+    * No lack of radio spectrum
   * Wired communication
     * IEEE 802.3 Clause 38 (1000Base-SX/LX) preferred
     * IEEE 802.3 Clause 40 (1000Base-T) can be used with surge protection
