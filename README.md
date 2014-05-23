@@ -10,7 +10,7 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
 * **Proof-of-concept implementation based on TUN device**
 * **Filing of IETF Internet Draft**
 * **Security based on X.509-certificate**
-* *C*ryptographically *G*enerated *E*ndpoint *ID*entifiers (*CGEIDs*)
+* **Cryptographically Generated Endpoint IDentifiers (*CGEIDs*)**
   * 32-bit IPv6 IANA prefix (XXXX:XXXX::0/32)
   * 96-bit Common Name of X.509 certificate as Interface Identifier
   * Self-signed X.509 certificate
