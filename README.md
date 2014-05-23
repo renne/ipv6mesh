@@ -9,16 +9,18 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
 ##**Planned features:**
 * **Proof-of-concept implementation based on TUN device**
 * **Filing of IETF Internet Draft**
-* **Security based on *4096-bit RSA* key-pairs**
-* ***C*ryptographically *G*enerated *E*ndpoint *ID*entifiers (*CGEIDs*)**
+* **Security based on X.509-certificate**
+* *C*ryptographically *G*enerated *E*ndpoint *ID*entifiers (*CGEIDs*)
   * 32-bit IPv6 IANA prefix (XXXX:XXXX::0/32)
-  * 96-bit SHA-2 hash of RSA public key as interface identifier
-  * Compatibel with 128 bit IPv6-addresses
-  * RSA based authentication
+  * 96-bit Common Name of X.509 certificate as Interface Identifier
+  * Self-signed X.509 certificate
+    * First 96-bit of SHA-512 hash of public key as Common Name
+    * 4096-bit key pair
+  * Compatibel with 128-bit IPv6-addresses
   * **Decentralized ad-hoc generation**
-  * Import/export/backup (CGEID, public/private key) via PKCS12 files named "&lt;CGEID&gt;.p12"
-  * CGEID can be exchanged between users via QR code, NFC, VCards, etc.
-  * IPv6MESH router operators don't have to provide any public IPv6 addresses to users/hosts
+  * Import/export/backup (CGEID, public/private key) via PKCS12 files named "&lt;Common Name&gt;.p12"
+  * X.509 certificate can be exchanged via QR code, NFC, DNS, VCards, etc.
+  * IPv6MESH router operators don't have to register/provide any public IPv6 addresses to users/hosts
 * **Privacy**
   * Pseudonimyzed IP addresses (CGEIDs)
     * static CGEIDs for incoming connections
@@ -30,18 +32,18 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
       * Exchange at 00:00 o'clock UTC
   * Onion routing depends on performance
   * End-2-End payload encryption
-    * Exchange of random symmetric stream cipher key by asymmetric RSA key pair
+    * Exchange of random symmetric stream cipher key by asymmetric key pair
     * AES256 stream cipher
     * Perfect Forward Secrecy
 * **Distributed HashTable for host/node/routing information**
-  * CGEID-based index (prevents Sybil attacks)
-  * RSA-signed records (prevents Spartacus attacks)
+  * 96-bit Common Name-based index (prevents Sybil attacks)
+  * Signed records (prevents Spartacus attacks)
   * UDP transport 
   * Bootstrapping
     * CGEIDs known via Neighbour Discovery Protocol
     * IPv4/IPv6 anycast address
   * Record types of a IPv6MESH node
-    * CGEID/RSA public key tupel for authentication
+    * RSA public key tupel for authentication
     * Point-2-Point IPv6MESH neighbours
     * Public IPv4/IPv6 addresses
     * Alternate CGEIDs (load-balancing, redundancy)
@@ -58,7 +60,7 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
     * CGEID zone reverse DNS servers
 * **Routing algorithm**
   * ??? (evaluate Hyperboria)
-* **Compatibility with IPv6 LANs**
+* **Compatibility with IPv6 local area networks**
   * CGEID creation/authorisation/payload encryption on IPv6MESH default gateway
   * CGEID provisioning of conventional IPv6 devices via DHCPv6
 * **Compatibility with BGP-routed internet**
@@ -82,7 +84,7 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
   * Connectivity between IPv6MESH clouds/isolated nodes
   * CGEIDs are LISP EIDs
   * IPv4/IPv6 addresses are LISP RLOCs
-  * CGEID -> RLOC mapping via DHT
+  * (CG)EID -> RLOC mapping via DHT
 * **Physical connectivity**
   * Wired links, radio links and FSO links can be DIY-installed between homes
   * [Free-space optical communication](https://en.wikipedia.org/wiki/Free-space_optical_communication)
@@ -93,6 +95,7 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
     * No electromagnetic interferences on other devices
     * No license or registration necessary
     * No lack of radio spectrum
+    * Position via GPS/GLONASS
   * Wired communication
     * IEEE 802.3 Clause 38 (1000Base-SX/LX) preferred
     * IEEE 802.3 Clause 40 (1000Base-T) can be used with surge protection
@@ -108,7 +111,7 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
 * ***GPLv2 license*** (Flattr button/Bitcoin address must not be manipulated)
 
 ##**Contribute**
-* ***Support project IPv6MESH*** (hardware, internet connectivity, domains, administrative costs, ...) via Flattr by starring on GitHub or via Bitcoin address 1FqEeuW54veJzcuyKbEUYrqjTNsbTYVLKr
+* ***Support project IPv6MESH*** (hardware, internet connectivity, domains, administrative costs, ...) via Flattr by starring on GitHub
 * Test, register bugs or leave a feature request or proposal at https://github.com/renne/ipv6mesh/issues
 * Contribute to the Wiki at https://github.com/renne/ipv6mesh/wiki
 * Fork, write code and make a pull request 
