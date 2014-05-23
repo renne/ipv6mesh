@@ -54,19 +54,25 @@
 <ul>
 <li><strong>Proof-of-concept implementation based on TUN device</strong></li>
 <li><strong>Filing of IETF Internet Draft</strong></li>
-<li><strong>Security based on <em>4096-bit RSA</em> key-pairs</strong></li>
+<li><strong>Security based on X.509-certificate</strong></li>
 <li>
-<strong><em>C</em>ryptographically <em>G</em>enerated <em>E</em>ndpoint <em>ID</em>entifiers (<em>CGEIDs</em>)</strong>
+<strong>Cryptographically Generated Endpoint IDentifiers (<em>CGEIDs</em>)</strong>
 
 <ul>
 <li>32-bit IPv6 IANA prefix (XXXX:XXXX::0/32)</li>
-<li>96-bit SHA-2 hash of RSA public key as interface identifier</li>
-<li>Compatibel with 128 bit IPv6-addresses</li>
-<li>RSA based authentication</li>
+<li>96-bit Common Name of X.509 certificate as Interface Identifier</li>
+<li>Self-signed X.509 certificate
+
+<ul>
+<li>First 96-bit of SHA-512 hash of public key as Common Name</li>
+<li>4096-bit key pair</li>
+</ul>
+</li>
+<li>Compatibel with 128-bit IPv6-addresses</li>
 <li><strong>Decentralized ad-hoc generation</strong></li>
-<li>Import/export/backup (CGEID, public/private key) via PKCS12 files named "&lt;CGEID&gt;.p12"</li>
-<li>CGEID can be exchanged between users via QR code, NFC, VCards, etc.</li>
-<li>IPv6MESH router operators don't have to provide any public IPv6 addresses to users/hosts</li>
+<li>Import/export/backup (CGEID, public/private key) via PKCS12 files named "&lt;Common Name&gt;.p12"</li>
+<li>X.509 certificate can be exchanged via QR code, NFC, DNS, VCards, etc.</li>
+<li>IPv6MESH router operators don't have to register/provide any public IPv6 addresses to users/hosts</li>
 </ul>
 </li>
 <li>
@@ -97,7 +103,7 @@
 <li>End-2-End payload encryption
 
 <ul>
-<li>Exchange of random symmetric stream cipher key by asymmetric RSA key pair</li>
+<li>Exchange of random symmetric stream cipher key by asymmetric key pair</li>
 <li>AES256 stream cipher</li>
 <li>Perfect Forward Secrecy</li>
 </ul>
@@ -108,8 +114,8 @@
 <strong>Distributed HashTable for host/node/routing information</strong>
 
 <ul>
-<li>CGEID-based index (prevents Sybil attacks)</li>
-<li>RSA-signed records (prevents Spartacus attacks)</li>
+<li>96-bit Common Name-based index (prevents Sybil attacks)</li>
+<li>Signed records (prevents Spartacus attacks)</li>
 <li>UDP transport </li>
 <li>Bootstrapping
 
@@ -121,7 +127,7 @@
 <li>Record types of a IPv6MESH node
 
 <ul>
-<li>CGEID/RSA public key tupel for authentication</li>
+<li>RSA public key tupel for authentication</li>
 <li>Point-2-Point IPv6MESH neighbours</li>
 <li>Public IPv4/IPv6 addresses</li>
 <li>Alternate CGEIDs (load-balancing, redundancy)</li>
@@ -156,7 +162,7 @@
 </ul>
 </li>
 <li>
-<strong>Compatibility with IPv6 LANs</strong>
+<strong>Compatibility with IPv6 local area networks</strong>
 
 <ul>
 <li>CGEID creation/authorisation/payload encryption on IPv6MESH default gateway</li>
@@ -212,14 +218,28 @@
 <li>Connectivity between IPv6MESH clouds/isolated nodes</li>
 <li>CGEIDs are LISP EIDs</li>
 <li>IPv4/IPv6 addresses are LISP RLOCs</li>
-<li>CGEID -&gt; RLOC mapping via DHT</li>
+<li>(CG)EID -&gt; RLOC mapping via DHT</li>
 </ul>
 </li>
 <li>
 <strong>Physical connectivity</strong>
 
 <ul>
-<li>Wires and radio links can be DIY-installed between homes</li>
+<li>Wired links, radio links and FSO links can be DIY-installed between homes</li>
+<li>
+<a href="https://en.wikipedia.org/wiki/Free-space_optical_communication">Free-space optical communication</a>
+
+<ul>
+<li>Class 1/1M</li>
+<li>High speed (100 or 1000 MBit/s)</li>
+<li>Bug-proof</li>
+<li>Electromagnetic immunity</li>
+<li>No electromagnetic interferences on other devices</li>
+<li>No license or registration necessary</li>
+<li>No lack of radio spectrum</li>
+<li>Position via GPS/GLONASS</li>
+</ul>
+</li>
 <li>Wired communication
 
 <ul>
@@ -255,7 +275,7 @@
 
 <ul>
 <li>
-<strong><em>Support project IPv6MESH</em></strong> (hardware, internet connectivity, domains, administrative costs, ...) via Flattr by starring on GitHub or via Bitcoin address 1FqEeuW54veJzcuyKbEUYrqjTNsbTYVLKr</li>
+<strong><em>Support project IPv6MESH</em></strong> (hardware, internet connectivity, domains, administrative costs, ...) via Flattr by starring on GitHub</li>
 <li>Test, register bugs or leave a feature request or proposal at <a href="https://github.com/renne/ipv6mesh/issues">https://github.com/renne/ipv6mesh/issues</a>
 </li>
 <li>Contribute to the Wiki at <a href="https://github.com/renne/ipv6mesh/wiki">https://github.com/renne/ipv6mesh/wiki</a>
