@@ -1,4 +1,4 @@
-IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6mesh.eu&title=IPv6MESH&language=C99&tags=github&category=software"><img src="http://api.flattr.com/button/flattr-badge-large.png" height="24em" width="16%"/></a>
+IPv6MESH
 ========
 
 **IPv6MESH** is a community project founded on 01/01/2014 by Rene Bartsch to develop and standardize a mesh network extension for the Internet Protocol 6 (OSI Layer 3). Every IPv6MESH node will generate it's cryptographically secured IPv6 addresses (CGEIDs) and connections to neighbour nodes ad-hoc which allows to deploy a large number of nodes in a IPv6MESH cloud automagically. As opposed to darknets like Hyperboria IPv6MESH will completely integrate into the existing BGP-routed internet. 
@@ -104,21 +104,20 @@ IPv6MESH <a href="https://flattr.com/submit/auto?user_id=renne&url=http://ipv6me
     * IEEE 802.11ad as next generation (lobbyists needed to get reserved frequency range)
     * Reduction of electromagnetic interferences on other IPv6MESH nodes
       * Transmit Power Control
-      * 2-dimensional beamforming
-    * Unencrypted (B)SSID "IETFRFC&lt;rfc number&gt;" ("ipv6mesh.eu" until formal release of RFC)
+      * 3-dimensional beamforming
+    * Unencrypted (B)SSID "IETFRFC&lt;rfc number&gt;" ("ipv6mesh" until formal release of RFC)
   * Laser Communication Terminals
 * **No support** for *Global No Such Agency Backup Service* **;-)** 
-* ***GPLv2 license*** (Flattr button/Bitcoin address must not be manipulated)
+* ***GPLv2 license*** (Bitcoin address must not be manipulated)
 
 ##**Contribute**
-* ***Support project IPv6MESH*** (hardware, internet connectivity, domains, administrative costs, ...) via Flattr by starring on GitHub
 * Test, register bugs or leave a feature request or proposal at https://github.com/renne/ipv6mesh/issues
 * Contribute to the Wiki at https://github.com/renne/ipv6mesh/wiki
 * Fork, write code and make a pull request 
   * Coding conventions: https://github.com/renne/ipv6mesh/wiki/Coding-conventions
 
 ##**Copyright**
-© 2014 René Bartsch, B. Sc. Informatics
+© 2014/2015 René Bartsch, B. Sc. Informatics
 
 ##**Contact**
-Email: **webmaster** AT **ipv6mesh.eu**
+Email: **webmaster** AT **ipv6mesh.tk**
